@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 12:53:59 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/18 13:26:49 by erivero-         ###   ########.fr       */
+/*   Created: 2024/01/17 15:36:57 by erivero-          #+#    #+#             */
+/*   Updated: 2024/01/18 16:01:56 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-# include "Contact.hpp"
+# include <iostream>
+# include <string>
+# include <stdbool.h>
 
- class PhoneBook{
+
+class	Contact{
 	private:
-	Contact	cont[8];
-	std::string	title[5];
-	int	count;
-
+		std::string	data[5];
 	public:
-	PhoneBook(void); //constructor
-	~PhoneBook(void); //destructor
-	void	pb_add(void);
-	void	pb_search(void);
-	void	pb_loop(void);
+		Contact(void);
+		~Contact(void);
+		int	add_contact(int field, std::string content);
+	//	void print_contacts(Contact *contacts, int count);
+		void display_contact(int i);
+	//	void display_full_contact(void);
+
 };
 
 #endif
