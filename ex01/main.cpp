@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 12:27:57 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/18 13:26:32 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:52:39 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,14 @@
 int	main(void)
 {
 	PhoneBook awesome;
-
-	std::cout << "WELCOME TO MY AWESOME PHONEBOOK\n";
+	
+	std::cout << "\033[1;36m";
+	std::cout << "***************************************\n";
+	std::cout << "*                                     *\n";
+	std::cout << "*   WELCOME TO MY AWESOME PHONEBOOK   *\n";
+	std::cout << "*                                     *\n";
+	std::cout << "***************************************\n";
+   	std::cout << "\033[0m";
 	awesome.pb_loop();
 	return (0);
 }
