@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 12:53:59 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/18 13:26:49 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/01/19 11:51:49 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  class PhoneBook{
 	private:
 	Contact	cont[8];
-	std::string	title[5];
+//	std::string	title[5];
 	int	count;
 
 	public:

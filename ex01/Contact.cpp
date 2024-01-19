@@ -6,24 +6,41 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 12:26:52 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/18 16:01:44 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/01/19 12:51:24 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-Contact::Contact(void){}
+Contact::Contact(void){
+	title[0] = "First Name: ";
+	title[1] = "Last Name: ";
+	title[2] = "Nickname: ";
+	title[3] = "Phone number: ";
+	title[4] = "Darkest secret: ";
+}
 Contact::~Contact(void){}
 
-int	Contact::add_contact(int field, std::string content)
+int	Contact::add_contact(int field)
 {
-	//parcheo para asegurarme de que el tlf sea un número?
-	if (content[0] == '\n') //esta mierda hay que arreglarla
+	std::cout << title[field];
+	std::getline(std::cin, data[field]);
+	if (data[field].empty())
 	{
 		std::cout << "No field can be empty\n";
 		return (0);
 	}
-	data[field] = content;
+	if (field == 3)
+	{
+		for (int i = 0; data[field][i]; i++)
+		{
+			if (!std::isdigit(data[field][i]) && data[field][i] != ' ')
+			{
+				std::cout << "Phone number must be a number\n";
+				return (0);
+			}
+		}
+	}
 	return (1);
 }
 
@@ -59,8 +76,11 @@ void Contact::display_contact(int i)
 		std::cout << std::endl;
 	}
 
-/* void Contact::display_full_contact(void)
+void Contact::display_full_contact(void)
 {
 	for (int i = 0; i < 5; i++)
-	
-} */
+	{
+		std::cout << title[i];
+		std::cout << data[i] << std::endl;
+	}
+}

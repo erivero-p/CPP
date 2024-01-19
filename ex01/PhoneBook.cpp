@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:08:40 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/18 16:02:42 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:11:29 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,38 +15,32 @@
 PhoneBook::~PhoneBook(void){}
 PhoneBook::PhoneBook(void)
 {
-	title[0] = "First Name: ";
+/* 	title[0] = "First Name: ";
 	title[1] = "Last Name: ";
 	title[2] = "Nickname: ";
 	title[3] = "Phone number: ";
-	title[4] = "Darkest secret: ";
+	title[4] = "Darkest secret: "; */
 	count = 0;
-	//quiero volver a pasar esto a Contact para
-	//poder imprimirlo desde search en una misma función
-	//o hacerla pública, ya veremos xd
 }
 
 void	PhoneBook::pb_add(void)
 {
 	int	i = 0;
-	std::string	data;
+	std::string	data = "patata";
 
 	if (count > 7)
 		count = 0;
 	while (i < 5)
-	{
-		std::cout << title[i];
-		std::cin >> data;
-		i += cont[count].add_contact(i, data);
-	}
-	std::cout /* << std::endl */ << "Contact has been saved";
+		i += cont[count].add_contact(i);
+	std::cout << "Contact has been saved";
 	count++;
 }
 int	ft_get_index(int count)
 {
 	std::string input;
 
-	std::cin >> input;
+	std::getline(std::cin, input);
+//	std::cin >> input;
 	if (input.length() != 1)
 		return (-1);
 	if (!std::isdigit(input[0]))
@@ -59,7 +53,7 @@ int	ft_get_index(int count)
 		std::cout << "There's no more than " << count << " contacts stored\n";
 		return (-1);
 	}
-	return (index);
+	return (index - 1); //para que el primero sea el 0 en el array
 }
 
 void	PhoneBook::pb_search(void)
@@ -76,11 +70,13 @@ void	PhoneBook::pb_search(void)
 		while (index < 0)
 		{
 			index = ft_get_index(count);
-			if (index == -1)
-				std::cout << "Please, input a correct index\n";
-			cont[index].display_full_contact();
+			if (index >= 0)
+			{
+				cont[index].display_full_contact();
+				break ;
+			}
+			std::cout << "Please, input a correct index\n";
 		}
-		//imprimir contacto introducido
 	}
 }
 void	PhoneBook::pb_loop()
@@ -93,7 +89,8 @@ void	PhoneBook::pb_loop()
 		std::cout << "ADD - to add a new contact\n";
 		std::cout << "SEARCH - to access the existing contacts\n";
 		std::cout << "EXIT - to close the PhoneBook\n";
-		std::cin >> input; //cin toma el input del stdin
+		std::getline(std::cin, input); //cin toma el input del stdin
+	//	std::cin >> input;
 		if (input == "EXIT")
 			break ;
 		if (input == "ADD")
