@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 15:28:05 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/23 12:24:20 by erivero-         ###   ########.fr       */
+/*   Created: 2024/01/17 15:36:57 by erivero-          #+#    #+#             */
+/*   Updated: 2024/01/19 12:52:46 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-Zombie::Zombie(void){}
-Zombie::~Zombie(void){
-	std::cout << "Zombie called " << name << " has been destroyed :c\n";
-}
+# include <iostream>
+# include <string>
+# include <stdbool.h>
 
-void	Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ...\n";
-}
+class	Contact{
+	private:
+		std::string	data[5];
+		std::string	title[5];
+	public:
+		Contact(void);
+		~Contact(void);
+		int	add_contact(int field);
+	//	void print_contacts(Contact *contacts, int count);
+		void display_contact(int i);
+		void display_full_contact(void);
+};
 
-void	Zombie::namer(std::string nick)
-{
-	name = nick;
-}
+#endif

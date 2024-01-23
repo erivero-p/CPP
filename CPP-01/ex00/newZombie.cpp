@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:56:59 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/22 16:12:38 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/01/23 12:35:38 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,5 @@ Zombie* newZombie(std::string name)
 
 	pepe = new Zombie;
 	pepe->namer(name);
-	pepe->announce();
 	return (pepe);
 }

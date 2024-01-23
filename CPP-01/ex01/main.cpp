@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 15:28:05 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/23 12:24:20 by erivero-         ###   ########.fr       */
+/*   Created: 2024/01/23 13:15:13 by erivero-          #+#    #+#             */
+/*   Updated: 2024/01/23 13:15:54 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(void){}
-Zombie::~Zombie(void){
-	std::cout << "Zombie called " << name << " has been destroyed :c\n";
-}
-
-void	Zombie::announce(void)
+int main(void)
 {
-	std::cout << name << ": BraiiiiiiinnnzzzZ...\n";
-}
+	int	i = 0;
 
-void	Zombie::namer(std::string nick)
-{
-	name = nick;
+	Zombie *horde = zombieHorde(10, "Joselito");
+	for (i = 0; i < 10; i++)
+		horde[i].announce();
+	delete [] horde;
 }

@@ -5,18 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/22 14:43:16 by erivero-          #+#    #+#              #
-#    Updated: 2024/01/23 12:24:49 by erivero-         ###   ########.fr        #
+#    Created: 2024/01/15 13:16:08 by erivero-          #+#    #+#              #
+#    Updated: 2024/01/15 13:16:09 by erivero-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+
+NAME = megaphone
 
 CPP = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = Zombie.cpp randomChump.cpp newZombie.cpp main.cpp
+SRC = megaphone.cpp
 
 # Object files
 OBJ = $(SRC:.cpp=.o)
