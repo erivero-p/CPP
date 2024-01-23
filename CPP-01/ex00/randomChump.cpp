@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:41:20 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/22 16:07:49 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:45:39 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 void randomChump(std::string name)
 {
-	Zombie	lola;
-
-	lola.namer(name);
+	Zombie lola = Zombie(name);
 	lola.announce();
 }

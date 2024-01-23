@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:34:16 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/22 16:10:19 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:55:31 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,13 @@ class Zombie{
 	private:
 		std::string	name;
 	public:
-	void	announce(void);
-	void	namer(std::string name);
-	Zombie(void);
-	~Zombie(void);
+		void	announce(void);
+		Zombie(void);
+		Zombie(std::string nick);
+		~Zombie(void);
 };
 
 Zombie* newZombie(std::string name);
 void randomChump(std::string name);
-
 
 #endif
