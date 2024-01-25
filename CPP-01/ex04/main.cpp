@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 12:07:39 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/25 13:19:44 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:08:28 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int	parse(int ac, char **av)
 	std::cout << "\033[0";
 	return (1);
 }
+// Pasar por argumento infile y outfile directamente implica una operación de copia, lo cual
+// no está permitido para este tipo de archivos. Se soluciona pasándolos por referencia.
 
 void	replacer(std::ifstream& infile, std::ofstream& outfile, std::string src, std::string	dst)
 {
@@ -44,7 +46,7 @@ void	replacer(std::ifstream& infile, std::ofstream& outfile, std::string src, st
 	while (std::getline(infile, line))
 	{
 		i = line.find(src);
-		while (i != std::string::npos)
+		while (i != std::string::npos) //npos es lo que devuelve find si no encuentra
 		{
 			line.erase(i, src.length());
 			line.insert(i, dst);
@@ -62,8 +64,6 @@ int	main(int ac, char **av)
 	std::ofstream outfile;
 	infile.open(av[1]);
 	outfile.open(std::string(av[1]) + ".replace");
-/* 	std::string	src = av[2];
-	std::string	dst = av[3]; */
 	replacer(infile, outfile, std::string(av[2]), std::string(av[3]));
 	infile.close();
 	outfile.close();
