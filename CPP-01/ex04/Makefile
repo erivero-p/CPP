@@ -6,18 +6,18 @@
 #    By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 13:16:08 by erivero-          #+#    #+#              #
-#    Updated: 2024/01/25 11:43:18 by erivero-         ###   ########.fr        #
+#    Updated: 2024/01/25 13:16:23 by erivero-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = megaphone
+NAME = replacer
 
 CPP = c++
-
+#NAME NAME NAME
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = megaphone.cpp
+SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

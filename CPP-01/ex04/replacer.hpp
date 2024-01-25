@@ -1,24 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   replacer.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 13:15:13 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/24 12:25:20 by erivero-         ###   ########.fr       */
+/*   Created: 2024/01/25 12:12:56 by erivero-          #+#    #+#             */
+/*   Updated: 2024/01/25 12:20:37 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
+#include <iostream>
+#include <fstream>
+#include <string>
 
-int main(void)
-{
-	int	i = 0;
-
-	Zombie *horde = zombieHorde(10, "Joselito");
-	for (i = 0; i < 10; i++)
-		horde[i].announce();
-	delete [] horde;
-	horde = nullptr;
-}
