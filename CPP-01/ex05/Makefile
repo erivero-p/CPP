@@ -6,15 +6,15 @@
 #    By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 13:16:08 by erivero-          #+#    #+#              #
-#    Updated: 2024/01/25 13:16:23 by erivero-         ###   ########.fr        #
+#    Updated: 2024/01/25 15:35:45 by erivero-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-patata = replacer
+NAME = harl
 
 CPP = c++
-#patata patata patata
+
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp
@@ -25,11 +25,11 @@ GREEN		=	\033[0;32m
 RED			=	\033[0;31m
 END			=	\033[0m
 
-all: $(patata)
+all: $(NAME)
 
-$(patata): $(OBJ)
+$(NAME): $(OBJ)
 	@$(CPP) $(FLAGS) -o $@ $(OBJ)
-	@echo "$(GREEN)$(patata) compiled$(END)";
+	@echo "$(GREEN)$(NAME) compiled$(END)";
 %.o: %.cpp
 	@$(CPP) $(FLAGS) -c $< -o $@
 
@@ -38,8 +38,8 @@ clean:
 	@echo "$(RED)compiled objects have been removed$(END)"
 
 fclean:	clean
-	@rm -f $(patata)
-	@echo "$(RED)$(patata) cleaned$(END)"
+	@rm -f $(NAME)
+	@echo "$(RED)$(NAME) cleaned$(END)"
 
 
 re: fclean all
