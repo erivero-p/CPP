@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:41:41 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/30 15:41:05 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/01/30 16:18:53 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 
 Fixed::Fixed() : value(0) {
 	std::cout << "Default constructor called" << std::endl;
+}
+
+Fixed::Fixed(const int n) 
+{
+	std::cout << "Int constructor called" << std::endl;
+	value = n << fractional_bits;
+}
+Fixed::Fixed(const float d) 
+{
+	std::cout << "Float constructor called" << std::endl;
+	value = (int)roundf(d * (1 << fractional_bits));
 }
 
 Fixed::Fixed(const Fixed &f) {
@@ -25,23 +36,34 @@ Fixed &Fixed::operator=(const Fixed &other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other) //verificamos que no estemos asignando el objeto a sí mismo
-		this->value = other.getRawBits();
+		this->value = other.value;
 	return (*this);
+}
+
+std::ostream& operator<<(std::ostream&oso, const Fixed& fx)
+{
+	oso << fx.toFloat();
+	return (oso);
 }
 
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
 }
-//const al final de la declaración indica que la función no modificará los miembros no mutables del objeto
-int Fixed::getRawBits(void) const
+float Fixed::toFloat(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
-	return (this->value);
+	float conv;
+	
+	conv = static_cast<float>(this->value) / (1 << this->fractional_bits);
+	//es lo mismo que dividir entre 2^fractuional_bits, que es
+	//como se hace la conversión de punto fijo a punto flotante
+	return (conv);
 }
 
-void Fixed::setRawBits(int const raw)
+int Fixed::toInt(void) const
 {
-	std::cout << "setRawBits member function called" << std::endl;
-	this->value = raw;
+	int	conv;
+
+	conv = this->value >> this->fractional_bits;
+	return (conv);
 }
