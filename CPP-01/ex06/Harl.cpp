@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:36:58 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/30 12:02:52 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/01/30 12:04:52 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,5 @@ void Harl::complain(std::string level)
 				break ; //sin este break, se ejecuta el default
 			default:
 				std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-
 		}
 }
