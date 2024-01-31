@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:32:14 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/30 16:13:43 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/01/31 11:33:44 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 class	Fixed {
 	private:
-		int	value; // fixed point value
+		int	value;
 		static const int fractional_bits = 8;
 	public:
 		Fixed();
@@ -24,10 +24,8 @@ class	Fixed {
 		Fixed(const Fixed &f);
 		Fixed& operator=(const Fixed &f);
 		~Fixed();
-		// int getRawBits(void) const;
-		// void setRawBits(int const raw);
 		float toFloat(void) const;
 		int toInt(void) const;
 };
 //overload del operador <<
-std::ostream& operator<<(std::ostream&oso, const Fixed& fx); //output stream object
+std::ostream& operator<<(std::ostream&oso, const Fixed& fx); //output stream object(oso)
