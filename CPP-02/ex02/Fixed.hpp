@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:32:14 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/31 15:48:09 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/01 11:36:35 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,6 @@ class	Fixed {
 		static Fixed &max(Fixed &a, Fixed &b);
 		static const Fixed &min(const Fixed &a, const Fixed &b);
 		static const Fixed &max(const Fixed &a, const Fixed &b);
-
-/* 	static Fixed &min(Fixed &first, Fixed &sec);
-	static Fixed &max(Fixed &first, Fixed &sec);
-
-	static const Fixed	&max(const Fixed &first, const Fixed &sec);
-	static const Fixed	&min(const Fixed &first, const Fixed &sec); */
-
 };
 //overload del operador <<
 std::ostream& operator<<(std::ostream&oso, const Fixed& fx); //output stream object(oso)

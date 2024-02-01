@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:41:41 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/31 15:48:23 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/01 11:42:27 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ bool Fixed::operator!=(const Fixed &fx)
 	return (false);
 }
 //overload de los operadores aritméticos +, -, *, /
-Fixed Fixed::operator+(const Fixed &fx)
+/* Fixed Fixed::operator+(const Fixed &fx)
 {
 	Fixed	result;
 	result.value = this->value + fx.value;
@@ -98,20 +98,36 @@ Fixed Fixed::operator-(const Fixed &fx)
 	Fixed	result;
 	result.value = this->value - fx.value;
 	return (result);
-}
+} */
 
-Fixed Fixed::operator*(const Fixed &fx)
+/* Fixed Fixed::operator*(const Fixed &fx)
 {
 	Fixed	result;
-	result.value = this->value * fx.value;
+	float a = this->toFloat();
+	float b = fx.toFloat();
+	std::cout << "a: " << a << ", b: " << b << std::endl;
+	result.value = a * b;
+	std::cout << "after mult: " << result.value << std::endl;
 	return (result);
-}
-
-Fixed Fixed::operator/(const Fixed &fx)
+} */
+/* Fixed Fixed::operator/(const Fixed &fx)
 {
 	Fixed	result;
 	result.value = this->value / fx.value;
 	return (result);
+} */
+
+Fixed Fixed::operator+(const Fixed &b) {
+	return (Fixed(this->toFloat() + b.toFloat()));
+}
+Fixed Fixed::operator-(const Fixed &b) {
+	return (Fixed(this->toInt() - b.toInt()));
+}
+Fixed Fixed::operator*(const Fixed &b) {
+	return (Fixed(this->toFloat() * b.toFloat()));
+}
+Fixed Fixed::operator/(const Fixed &b) {
+	return (Fixed(this->toFloat() / b.toFloat()));
 }
 //overload de los operadores de incremento y decremento		
 Fixed Fixed::operator++(int)
