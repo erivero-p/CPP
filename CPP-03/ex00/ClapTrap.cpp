@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 11:32:51 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/02 15:14:48 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:54:07 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ClapTrap::ClapTrap() : hitPoints(10), energyPoints(10), attackDamage(0) {
 	std::cout << "\033[0;36m" << "Default Constructor called" << "\033[0m" << std::endl;
 }
-ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0) {
+ClapTrap::ClapTrap(std::string nm) : name(nm), hitPoints(10), energyPoints(10), attackDamage(0) {
 	
 	std::cout << "\033[0;36m" << "Name Constructor called" << "\033[0m" << std::endl;
  }
@@ -29,7 +29,7 @@ ClapTrap::ClapTrap(const ClapTrap &cpy)
 }
 ClapTrap& ClapTrap::operator=(const ClapTrap &src)
 {
-	std::cout << "\033[0;36m" << "Copy assignment operator called" << "\033[0m" << std::endl;
+	std::cout << "\033[0;36m" << "Copy Assignment Operator Called" << "\033[0m" << std::endl;
 	if (this != &src)
 	{
 		this->name = src.name;
