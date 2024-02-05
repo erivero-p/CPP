@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 14:51:03 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/03 18:04:34 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/05 11:19:30 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,20 @@
 
 int main()
 {
-	ClapTrap john;
-	ClapTrap jim("Jim");
-	ClapTrap joe("Joe");
+
+	ClapTrap john("John");
+	ClapTrap claude("Claude");
 	ScavTrap jane("Jane");
 
-	john.attack("Marge");
-	john.attack("Bart");
-	john.attack("Homer");
-	john.takeDamage(5);
-	jim.takeDamage(9);
-	jim.takeDamage(10);
-	joe.beRepaired(10);
-	joe.takeDamage(19);
-	jane.attack("Lisa");
-	jane.takeDamage(99);
-	jane.beRepaired(50);
+	john.attack("Peter");
+	john.attack("Claire");
+	john.attack("Pencil");
+	john.takeDamage(42);
+	claude.beRepaired(10);
+	claude.takeDamage(19);
+	jane.attack("Claire");
+	jane.takeDamage(24);
+	jane.beRepaired(24);
+	jane.displayStatus();
 	jane.guardGate();
 }
