@@ -6,18 +6,18 @@
 #    By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 13:16:08 by erivero-          #+#    #+#              #
-#    Updated: 2024/02/02 14:53:45 by erivero-         ###   ########.fr        #
+#    Updated: 2024/02/05 11:09:03 by erivero-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = ClapTrap
+NAME = ScavTrap
 
 CPP = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

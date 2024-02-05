@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:38:19 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/02 16:56:04 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/05 11:10:29 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ ScavTrap::ScavTrap(const ScavTrap& cpy)
 	std::cout << "\033[1;36m" << "ScavTrap Copy Constructor Called"<< "\033[0m" <<std::endl;
 	*this = cpy;
 }
-ScavTrap::ScavTrap &operator=(const ScavTrap& src)
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& src)
 {
 	std::cout << "\033[1;36m" << "ScavTrap Copy Assignment Operator Called" << "\033[0m" << std::endl;
 	if (this != &src)
@@ -45,7 +46,13 @@ ScavTrap::ScavTrap &operator=(const ScavTrap& src)
 	}
 	return (*this);
 }
+
 ScavTrap::~ScavTrap()
 {
 	std::cout << "\033[1;36m" << "ScavTrap Destructor Called"<< "\033[0m" <<std::endl;
+}
+
+void	ScavTrap::guardGate(void)
+{
+	std::cout << "\033[1;36m" << "ScavTrap " << this->name << " has entered in Gate keeper mode" << "\033[0m" << std::endl;
 }

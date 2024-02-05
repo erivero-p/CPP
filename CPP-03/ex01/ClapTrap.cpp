@@ -6,11 +6,11 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 11:32:51 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/02 16:53:52 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/03 18:05:00 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 ClapTrap::ClapTrap() : hitPoints(10), energyPoints(10), attackDamage(0) {
 	std::cout << "\033[0;36m" << "Default Constructor called" << "\033[0m" << std::endl;
