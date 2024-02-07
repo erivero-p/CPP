@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 14:42:19 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/06 16:06:10 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/07 12:56:51 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ class DiamondTrap : public ScavTrap, public FragTrap {
 		DiamondTrap(const DiamondTrap& cpy);
 		DiamondTrap& operator=(const DiamondTrap& src);
 		~DiamondTrap();
+		void	attack(const std::string& target);
+		void	displayStatus();
 		void whoAmI(void);
 };

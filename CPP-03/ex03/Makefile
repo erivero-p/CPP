@@ -6,18 +6,18 @@
 #    By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 13:16:08 by erivero-          #+#    #+#              #
-#    Updated: 2024/02/06 14:04:24 by erivero-         ###   ########.fr        #
+#    Updated: 2024/02/07 12:57:43 by erivero-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = FragTrap
+NAME = DiamondTrap
 
 CPP = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
