@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 12:32:49 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/13 12:19:30 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/13 16:11:17 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int main()
 	i->makeSound(); //will output the cat sound!
 	meta->makeSound();
 	wrong->makeSound();
-/* 	delete meta;
+	delete meta;
 	delete j;
 	delete i;
-	delete wrong; */
+	delete wrong;
 	return (0);
 }

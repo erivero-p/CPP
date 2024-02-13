@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 12:31:00 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/12 13:27:29 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/13 16:14:37 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "Animal.hpp"
 
 class Dog : public Animal {
+	private:
+		Brain *tm;
 	public:
 		Dog(void);
 		Dog(const Dog &cpy);
