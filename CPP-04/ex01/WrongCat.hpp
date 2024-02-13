@@ -14,6 +14,8 @@
 #include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal {
+	private:
+		Brain *tm;
 	public:
 		WrongCat(void);
 		WrongCat(const WrongCat &cpy);

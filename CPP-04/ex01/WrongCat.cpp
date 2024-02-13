@@ -14,6 +14,7 @@
 
 WrongCat::WrongCat(void) {
 	this->type = "WrongCat";
+	this->tm = new Brain();
 }
 WrongCat::WrongCat(const WrongCat &cpy) {
 
@@ -26,7 +27,7 @@ WrongCat&	WrongCat::operator=(const WrongCat &src) {
 	return (*this);
 }
 WrongCat::~WrongCat(void){
-	
+	delete tm;
 }
 
 void	WrongCat::makeSound(void) const {
