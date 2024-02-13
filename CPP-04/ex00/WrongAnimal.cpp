@@ -15,29 +15,30 @@
 WrongAnimal::WrongAnimal(void) {
 	
 }
+
 WrongAnimal::WrongAnimal(std::string tp) : type(tp) {
 	
 }
+
 WrongAnimal::WrongAnimal(const WrongAnimal &cpy){
 
 	*this = cpy;
 }
+
 WrongAnimal&	WrongAnimal::operator=(const WrongAnimal &src) {
 
 	if (this != &src)
 		this->type = src.type;
 	return (*this);
 }
+
 WrongAnimal::~WrongAnimal(void) {
 
 }
 
 void	WrongAnimal::makeSound(void) const {
 	std::cout << "\033[1;33m";
-/* 	if (type == "Dog") */
-		std::cout << "Woof woof!" << std::endl;
-/* 	else if (type == "Cat")
-		std::cout << "Prrr...meow" << std::endl; */
+	std::cout << "Woof woof!" << std::endl;
 	std::cout << "\033[0m";
 }
 
