@@ -22,7 +22,7 @@ class	WrongAnimal
 	WrongAnimal(std::string type);
 	WrongAnimal(const WrongAnimal &cpy);
 	WrongAnimal&	operator=(const WrongAnimal &src);
-	~WrongAnimal(void);
-	void	makeSound(void) const;
+	virtual ~WrongAnimal(void);
+	virtual void	makeSound(void) const;
 	std::string	getType(void) const;
 };
