@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 11:48:49 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/13 15:36:11 by erivero-         ###   ########.fr       */
+/*   Created: 2024/02/13 11:29:44 by erivero-          #+#    #+#             */
+/*   Updated: 2024/02/13 11:38:41 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 
-class	Animal
-{
-	protected:
-		std::string	type;
+class Brain {
+	private:
+		std::string ideas[100];
 	public:
-	Animal(void);
-	Animal(std::string type);
-	Animal(const Animal &cpy);
-	Animal&	operator=(const Animal &src);
-	virtual ~Animal(void);
-	virtual void	makeSound(void) const;
-	std::string	getType(void) const;
+		Brain(void);
+		Brain(const Brain &cpy);
+		Brain& operator=(const Brain &src);
+		~Brain(void);
 };

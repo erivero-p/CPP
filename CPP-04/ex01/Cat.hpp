@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 11:48:49 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/13 15:36:11 by erivero-         ###   ########.fr       */
+/*   Created: 2024/02/12 12:22:21 by erivero-          #+#    #+#             */
+/*   Updated: 2024/02/13 11:46:56 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
+#include "Animal.hpp"
 
-class	Animal
-{
-	protected:
-		std::string	type;
+class Cat : public Animal {
+	private:
+		Brain *tm; //thinking machine
 	public:
-	Animal(void);
-	Animal(std::string type);
-	Animal(const Animal &cpy);
-	Animal&	operator=(const Animal &src);
-	virtual ~Animal(void);
-	virtual void	makeSound(void) const;
-	std::string	getType(void) const;
+		Cat(void);
+		Cat(const Cat &cpy);
+		Cat&	operator=(const Cat &src);
+		~Cat(void);
 };

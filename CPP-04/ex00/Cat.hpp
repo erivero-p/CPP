@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 12:22:21 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/12 13:27:24 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/13 15:34:08 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ class Cat : public Animal {
 		Cat(const Cat &cpy);
 		Cat&	operator=(const Cat &src);
 		~Cat(void);
+		void	makeSound() const;
 };

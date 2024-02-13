@@ -6,12 +6,13 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 11:48:49 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/13 15:36:11 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/13 11:46:26 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+#include "Brain.hpp"
 
 class	Animal
 {
@@ -22,7 +23,7 @@ class	Animal
 	Animal(std::string type);
 	Animal(const Animal &cpy);
 	Animal&	operator=(const Animal &src);
-	virtual ~Animal(void);
-	virtual void	makeSound(void) const;
+	~Animal(void);
+	void	makeSound(void) const;
 	std::string	getType(void) const;
 };
