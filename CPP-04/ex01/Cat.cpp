@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 12:27:31 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/13 16:13:19 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/19 11:12:47 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ Cat&	Cat::operator=(const Cat &src) {
 
 	if (this != &src)
 	{
-		this->type = src.type;
-		for (int i = 0; i < 100; i++)
-			this->tm[i] = src.tm[i];
+		delete this->tm;
+		this->tm = new	Brain(*src.tm);
 	}
 	return (*this);
 }

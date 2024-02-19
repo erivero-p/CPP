@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 12:31:42 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/13 16:37:24 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/19 11:14:47 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ Dog&	Dog::operator=(const Dog &src) {
 
 	if (this != &src)
 	{
-		this->type = src.type;
-		for (int i = 0; i < 100; i++)
-			this->tm[i] = src.tm[i];
+		delete this->tm;
+		this->tm = new	Brain(*src.tm);
 	}
 	return (*this);
 }
