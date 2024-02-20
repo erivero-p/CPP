@@ -6,7 +6,7 @@
 #    By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 13:16:08 by erivero-          #+#    #+#              #
-#    Updated: 2024/02/19 16:01:07 by erivero-         ###   ########.fr        #
+#    Updated: 2024/02/20 15:57:47 by erivero-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CPP = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp AMateria.cpp Ice.cpp Cure.cpp ICharacter.cpp
+SRC = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

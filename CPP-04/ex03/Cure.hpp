@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Cure.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 15:18:02 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/20 16:09:56 by erivero-         ###   ########.fr       */
+/*   Created: 2024/02/19 16:06:00 by erivero-          #+#    #+#             */
+/*   Updated: 2024/02/20 12:17:14 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
-#include "Character.hpp"
+#include "AMateria.hpp"
 
-class ICharacter;
-
-class AMateria
-{
-	protected:
-		std::string type;
+class Cure : public AMateria {
 	public:
-		AMateria(void);
-		AMateria(std::string const &type);
-		AMateria(const AMateria &cpy);
-		AMateria& operator=(const AMateria &src);
-		~AMateria(void);
-		std::string const & getType() const; //Returns the materia type
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
-};
+		Cure(void);
+		Cure(const Cure &cpy);
+		Cure &operator=(const Cure &src);
+		~Cure(void);
+		//AMateria* clone(void) const;
+		Cure* clone(void) const; //no sé si esto se puede hacer
+		void use(ICharacter& target);
+} ;

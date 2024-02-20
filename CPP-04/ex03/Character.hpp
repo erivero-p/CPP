@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 15:18:02 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/20 16:09:56 by erivero-         ###   ########.fr       */
+/*   Created: 2024/02/20 13:00:13 by erivero-          #+#    #+#             */
+/*   Updated: 2024/02/20 16:08:43 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
-#include "Character.hpp"
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class ICharacter;
+class Character : public ICharacter {
 
-class AMateria
-{
-	protected:
-		std::string type;
+	private:
+		AMateria *inventory[4];
+		std::string	name;
 	public:
-		AMateria(void);
-		AMateria(std::string const &type);
-		AMateria(const AMateria &cpy);
-		AMateria& operator=(const AMateria &src);
-		~AMateria(void);
-		std::string const & getType() const; //Returns the materia type
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+		Character(void);
+		Character(std::string name);
+		Character(const Character &src);
+		Character&	operator=(const Character &src);
+		~Character(void);
+		std::string const& getName(void) const;
 };
