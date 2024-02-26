@@ -6,12 +6,12 @@
 #    By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 13:16:08 by erivero-          #+#    #+#              #
-#    Updated: 2024/02/20 15:57:47 by erivero-         ###   ########.fr        #
+#    Updated: 2024/02/26 11:22:24 by erivero-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = AnimalAbs
+NAME = Interface
 
 CPP = c++
 

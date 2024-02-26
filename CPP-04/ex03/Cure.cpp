@@ -25,7 +25,7 @@ Cure::Cure(const Cure &cpy) {
 Cure& Cure::operator=(const Cure &src) {
 
 	if (this != &src)
-		this->type = src.type;
+		this->type = src.getType();
 	return (*this);
 }
 
@@ -41,5 +41,5 @@ Cure* Cure::clone(void) const {
 
 void Cure::use(ICharacter& target) {
 
-	std::cout << "* heals " << target.getName() << "wounds *\n";
+	std::cout << "* heals " << target.getName() << "'s wounds *\n";
 }

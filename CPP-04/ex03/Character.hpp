@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:00:13 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/22 14:03:54 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/26 11:32:41 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,5 @@ class Character : public ICharacter {
 		void	toFloor(AMateria *m); //para soltar en el suelo
 		static AMateria **floor; //estática para que todos lo compartan
 		static int fSize; // cuántos ítems hay en el suelo
+		void	displayInventory(void);
 };

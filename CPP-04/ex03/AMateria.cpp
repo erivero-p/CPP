@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:26:58 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/20 12:19:20 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/26 11:00:24 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,9 @@ AMateria::~AMateria(void) {
 std::string const &AMateria::getType() const {
 	
 	return (this->type);
+}
+
+void AMateria::use(ICharacter& target) {
+
+	std::cout << "* Undefined behaviour to: " << target.getName() << "*\n";
 }

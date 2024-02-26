@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:50:30 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/22 14:27:24 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/26 11:59:07 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ Character::Character(const Character &src) {
 
 Character::~Character(void) {
 
+/* 	for (int i = 0; i <= this->eqSize; i++)
+		this->inventory[i]->~AMateria(); */
 }
 
 std::string const& Character::getName(void) const {
@@ -58,7 +60,7 @@ std::string const& Character::getName(void) const {
 	return (this->name);
 }
 
-void	toFloor(AMateria *m) {
+void	Character::toFloor(AMateria *m) {
 
 	AMateria **newFloor = new AMateria*[Character::fSize + 1];
 	int i = 0;
@@ -81,6 +83,7 @@ void Character::equip(AMateria* m) {
 	else
 		this->toFloor(m);
 }
+
 void Character::unequip(int idx) {
 
 	if (idx < 0 || idx > 3)
@@ -106,4 +109,12 @@ void Character::use(int idx, ICharacter& target) {
 		std::cout << "Slot is empty" << std::endl;
 	else
 		this->inventory[idx]->use(target);
+}
+
+void	Character::displayInventory(void) {
+
+	std::cout << "\033[0;34m";
+	for (int i = 0; i <= this->eqSize; i++)
+		std::cout << i << ": " << inventory[i]->getType() << std::endl;
+	std::cout << "\033[0m";
 }
