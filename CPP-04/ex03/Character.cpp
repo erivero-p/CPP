@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:50:30 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/26 11:59:07 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/27 11:20:16 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ Character::Character(const Character &src) {
 
 Character::~Character(void) {
 
-/* 	for (int i = 0; i <= this->eqSize; i++)
-		this->inventory[i]->~AMateria(); */
+	for (int i = 0; i <= this->eqSize; i++)
+		delete this->inventory[i];
 }
 
 std::string const& Character::getName(void) const {

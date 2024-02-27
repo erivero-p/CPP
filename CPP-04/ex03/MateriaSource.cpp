@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 12:23:55 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/26 13:14:16 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/27 11:15:35 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ MateriaSource& MateriaSource::operator=(const MateriaSource &src) {
 
 MateriaSource::~MateriaSource() {
 
+	std::cout << "MS destructor called\n";
+	for (int i = 0; i < lSize; i++)
+		delete learnt[i];
 }
 void MateriaSource::learnMateria(AMateria* src) {
 

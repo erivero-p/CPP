@@ -6,13 +6,13 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 12:23:55 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/26 12:56:46 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/27 11:07:52 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "IMateriaSource.hpp"
 
-class MateriaSource : IMateriaSource {
+class MateriaSource : public IMateriaSource {
 
 	private:
 		AMateria	*learnt[4];
