@@ -31,6 +31,7 @@ Cure& Cure::operator=(const Cure &src) {
 
 Cure::~Cure(void) {
 	
+	std::cout << "Cure destructor called" << std::endl;
 }
 
 Cure* Cure::clone(void) const {

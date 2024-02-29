@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:14:23 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/26 11:03:33 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:33:41 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ Ice& Ice::operator=(const Ice &src) {
 }
 
 Ice::~Ice(void) {
-	
+
+	std::cout << "Ice destructor called" << std::endl;
 }
 
 Ice* Ice::clone(void) const {

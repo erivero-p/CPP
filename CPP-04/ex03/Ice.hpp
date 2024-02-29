@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:06:00 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/20 15:56:45 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:18:44 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class Ice : public AMateria {
 		Ice(const Ice &cpy);
 		Ice &operator=(const Ice &src);
 		~Ice(void);
-		//AMateria* clone(void) const;
-		Ice* clone(void) const; //no sé si esto se puede hacer
-		void use(ICharacter& target);
+		virtual Ice* clone(void) const;
+		virtual void use(ICharacter& target);
 } ;

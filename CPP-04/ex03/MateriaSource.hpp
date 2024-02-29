@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 12:23:55 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/27 11:07:52 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:19:24 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ class MateriaSource : public IMateriaSource {
 		MateriaSource(const MateriaSource &cpy);
 		MateriaSource& operator=(const MateriaSource &src);
 		~MateriaSource();
-		void learnMateria(AMateria*);
-		AMateria* createMateria(std::string const & type);
+		virtual void learnMateria(AMateria*);
+		virtual AMateria* createMateria(std::string const & type);
 } ;

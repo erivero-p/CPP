@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:50:30 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/27 11:20:16 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/02/29 13:02:57 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ AMateria **Character::floor = NULL;
 
 Character::Character(void) : eqSize(-1) {
 
+	this->name = "Default";
 	for (int i = 0; i < 4; i++) {
 		this->inventory[i] = NULL;
-		this->floor[i] = NULL;
+	//	this->floor[i] = NULL;
 	}
 }
 
@@ -34,6 +35,8 @@ Character&	Character::operator=(const Character &src) {
 
 	if (this != &src)
 	{
+		this->name = src.getName();
+		this->eqSize = src.eqSize;
 		for (int i = 0; i < 4; i++) {
 			if (this->inventory[i])
 				delete this->inventory[i];
@@ -48,11 +51,11 @@ Character::Character(const Character &src) {
 	*this = src;
 }
 
-
 Character::~Character(void) {
 
-	for (int i = 0; i <= this->eqSize; i++)
-		delete this->inventory[i];
+	std::cout << "Character destructor called" << std::endl;
+/* 	for (int i = 0; i <= this->eqSize; i++)
+		delete this->inventory[i]; */
 }
 
 std::string const& Character::getName(void) const {
@@ -67,7 +70,7 @@ void	Character::toFloor(AMateria *m) {
 	while (i++ < Character::fSize)
 		newFloor[i] = Character::floor[i];
 	newFloor[i] = m;
-	if (Character::floor)
+	if (Character::floor != NULL)
 		delete[] Character::floor;
 	Character::floor = newFloor;
 	Character::fSize++;
@@ -86,7 +89,7 @@ void Character::equip(AMateria* m) {
 
 void Character::unequip(int idx) {
 
-	if (idx < 0 || idx > 3)
+	if (idx < 0 || idx > eqSize)
 		std::cout << "Wrong index" << std::endl;
 	else
 	{
@@ -101,6 +104,7 @@ void Character::unequip(int idx) {
 	}
 	
 }
+
 void Character::use(int idx, ICharacter& target) {
 
 	if (idx < 0 || idx > 3)

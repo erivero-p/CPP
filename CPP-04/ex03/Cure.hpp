@@ -19,7 +19,6 @@ class Cure : public AMateria {
 		Cure(const Cure &cpy);
 		Cure &operator=(const Cure &src);
 		~Cure(void);
-		//AMateria* clone(void) const;
-		Cure* clone(void) const; //no sé si esto se puede hacer
-		void use(ICharacter& target);
+		virtual Cure* clone(void) const;
+		virtual void use(ICharacter& target);
 } ;
