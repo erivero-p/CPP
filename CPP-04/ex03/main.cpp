@@ -6,14 +6,12 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:12:02 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/27 11:06:54 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/01 15:36:02 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
-#include "Cure.hpp"
-#include "Character.hpp"
-#include "MateriaSource.hpp"
+#include "inc/Interface.hpp"
+
 
 void ft_leak(void)
 {
@@ -51,6 +49,7 @@ int main()
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	ICharacter* bob = new Character("bob");
+	*bob = *me;
 	me->use(0, *bob);
 	me->use(1, *bob);
 	delete bob;

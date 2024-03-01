@@ -5,42 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 16:14:23 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/29 12:33:41 by erivero-         ###   ########.fr       */
+/*   Created: 2024/03/01 11:20:04 by erivero-          #+#    #+#             */
+/*   Updated: 2024/03/01 15:40:14 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "inc/Interface.hpp"
 
 Ice::Ice(void) {
 
+	std::cout << LGRAY << "Ice Constructor called" << RNL;
 	this->type = "ice";
 }
 
-Ice::Ice(const Ice &cpy) {
+Ice::Ice(Ice const & src) {
 
-	*this = cpy;
+	std::cout << LGRAY << "Ice Copy Constructor called" << RNL;
+	*this = src;
 }
-
-Ice& Ice::operator=(const Ice &src) {
+Ice &Ice::operator=(Ice const & src) {
 
 	if (this != &src)
 		this->type = src.getType();
 	return (*this);
 }
-
 Ice::~Ice(void) {
 
-	std::cout << "Ice destructor called" << std::endl;
-}
-
-Ice* Ice::clone(void) const {
-
-	Ice *cln = new Ice();
-	return (cln);
+	std::cout << RED << "Ice Destructor called" << RNL;
 }
 
 void Ice::use(ICharacter& target) {
 
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *\n";
+	std::cout << BOLD;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *";
+	std::cout << RNL;
+}
+
+Ice*	Ice::clone(void) const {
+//llamamos al constructor de copia
+	return (new Ice(*this));
 }

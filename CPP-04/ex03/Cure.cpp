@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 16:14:23 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/20 12:20:42 by erivero-         ###   ########.fr       */
+/*   Created: 2024/03/01 11:20:04 by erivero-          #+#    #+#             */
+/*   Updated: 2024/03/01 15:40:21 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
+#include "inc/Interface.hpp"
 
 Cure::Cure(void) {
 
+	std::cout << LGRAY << "Cure Constructor called" << RNL;
 	this->type = "cure";
 }
 
-Cure::Cure(const Cure &cpy) {
+Cure::Cure(Cure const & src) {
 
-	*this = cpy;
+	std::cout << LGRAY << "Cure Copy Constructor called" << RNL;
+	*this = src;
 }
-
-Cure& Cure::operator=(const Cure &src) {
+Cure &Cure::operator=(Cure const & src) {
 
 	if (this != &src)
 		this->type = src.getType();
@@ -30,17 +31,18 @@ Cure& Cure::operator=(const Cure &src) {
 }
 
 Cure::~Cure(void) {
-	
-	std::cout << "Cure destructor called" << std::endl;
-}
 
-Cure* Cure::clone(void) const {
-
-	Cure *cln = new Cure();
-	return (cln);
+	std::cout << RED << "Cure Destructor called" << RNL;
 }
 
 void Cure::use(ICharacter& target) {
 
-	std::cout << "* heals " << target.getName() << "'s wounds *\n";
+	std::cout << BOLD;
+	std::cout << "* heals " << target.getName() << "'s wounds *";
+	std::cout << RNL;
+}
+
+Cure*	Cure::clone(void) const {
+//llamamos al constructor de copia
+	return (new Cure(*this));
 }

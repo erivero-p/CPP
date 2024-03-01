@@ -5,21 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 12:23:55 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/29 13:12:37 by erivero-         ###   ########.fr       */
+/*   Created: 2024/03/01 15:30:19 by erivero-          #+#    #+#             */
+/*   Updated: 2024/03/01 15:33:18 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#include "inc/Interface.hpp"
 
-MateriaSource::MateriaSource() {
+MateriaSource::MateriaSource(void) {
 
+	std::cout << LGRAY << "MateriaSource Constructor called" << RNL;
 	for (int i = 0; i < 4; i++)
 		this->learnt[i] = NULL;
 	this->lSize = 0;
 }
+
 MateriaSource::MateriaSource(const MateriaSource &cpy) {
-	
+
+	std::cout << LGRAY << "MateriaSource Copy Constructor called" << RNL;
 	*this = cpy;
 }
 MateriaSource& MateriaSource::operator=(const MateriaSource &src) {
@@ -30,7 +33,8 @@ MateriaSource& MateriaSource::operator=(const MateriaSource &src) {
 		{
 			if (this->learnt[i])
 				delete this->learnt[i];
-			this->learnt[i] = src.learnt[i]->clone();
+			if (src.learnt[i])
+				this->learnt[i] = src.learnt[i]->clone();
 		}
 	}
 	return (*this);
@@ -38,7 +42,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource &src) {
 
 MateriaSource::~MateriaSource() {
 
-	std::cout << "MS destructor called\n";
+	std::cout << RED << "MateriaSource Destructor called" << RNL;
 	for (int i = 0; i <= lSize; i++)
 		delete learnt[i];
 }

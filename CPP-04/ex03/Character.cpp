@@ -5,106 +5,96 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 15:50:30 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/29 13:02:57 by erivero-         ###   ########.fr       */
+/*   Created: 2024/03/01 12:12:44 by erivero-          #+#    #+#             */
+/*   Updated: 2024/03/01 15:42:24 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
+#include "inc/Interface.hpp"
 
-int Character::fSize = 0;
-AMateria **Character::floor = NULL;
+AMateria	**Character::floor = NULL;
+int			Character::fSize = 0;
 
-Character::Character(void) : eqSize(-1) {
-
-	this->name = "Default";
-	for (int i = 0; i < 4; i++) {
+Character::Character(void) : name("Default"), iSize(0) {
+	
+	std::cout << LGRAY << "Character Constructor called" << RNL;
+	for (int i = 0; i < 4; i++)
 		this->inventory[i] = NULL;
-	//	this->floor[i] = NULL;
-	}
 }
 
-Character::Character(std::string nm) : name(nm), eqSize(-1) {
+Character::Character(const std::string nm) : name(nm), iSize(0) {
 
-	for (int i = 0; i < 4; i++) {
+	std::cout << LGRAY << "Character Name Constructor called" << RNL;
+	for (int i = 0; i < 4; i++)
 		this->inventory[i] = NULL;
-	}
 }
 
-Character&	Character::operator=(const Character &src) {
+Character::Character(const Character &src) {
+
+	std::cout << LGRAY << "Character Copy Constructor called" << RNL;
+	*this = src;
+}
+
+Character &Character::operator=(const Character &src) {
 
 	if (this != &src)
 	{
+		this->iSize = src.iSize;
 		this->name = src.getName();
-		this->eqSize = src.eqSize;
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 4; i++)
+		{
 			if (this->inventory[i])
 				delete this->inventory[i];
-			this->inventory[i] = src.inventory[i]->clone();
+			if (src.inventory[i])
+				this->inventory[i] = src.inventory[i]->clone();
 		}
 	}
 	return (*this);
 }
 
-Character::Character(const Character &src) {
-
-	*this = src;
-}
-
 Character::~Character(void) {
-
-	std::cout << "Character destructor called" << std::endl;
-/* 	for (int i = 0; i <= this->eqSize; i++)
-		delete this->inventory[i]; */
+	
+	std::cout << RED << "Character Destructor called" << RNL;
 }
 
-std::string const& Character::getName(void) const {
+std::string const & Character::getName() const {
 
 	return (this->name);
 }
 
-void	Character::toFloor(AMateria *m) {
-
-	AMateria **newFloor = new AMateria*[Character::fSize + 1];
-	int i = 0;
-	while (i++ < Character::fSize)
-		newFloor[i] = Character::floor[i];
-	newFloor[i] = m;
-	if (Character::floor != NULL)
-		delete[] Character::floor;
-	Character::floor = newFloor;
-	Character::fSize++;
-}
-
 void Character::equip(AMateria* m) {
 
-	if (this->eqSize < 3)
+	if (this->iSize > 3) 
 	{
-		this->eqSize++;
-		this->inventory[this->eqSize] = m;
+		std::cout << "Inventory is already full" << NL;
+		toFloor(m);	
 	}
 	else
-		this->toFloor(m);
+	{
+		inventory[iSize] = m;
+		iSize++;
+	}
+
 }
 
 void Character::unequip(int idx) {
-
-	if (idx < 0 || idx > eqSize)
-		std::cout << "Wrong index" << std::endl;
+	if (idx >= iSize)
+		std::cout << "Incorrect index" << NL;
 	else
 	{
 		toFloor(inventory[idx]);
-		if (idx < eqSize)
+		if (idx < iSize)
 		{
-			while (idx++ < eqSize)
+			while (idx < iSize)
+			{
 				inventory[idx] = inventory[idx + 1];
+				idx++;
+			}
+			inventory[idx] = NULL;
 		}
-		inventory[idx] = NULL;
-		eqSize--;
+		iSize--;
 	}
-	
 }
-
 void Character::use(int idx, ICharacter& target) {
 
 	if (idx < 0 || idx > 3)
@@ -115,10 +105,15 @@ void Character::use(int idx, ICharacter& target) {
 		this->inventory[idx]->use(target);
 }
 
-void	Character::displayInventory(void) {
+void Character::toFloor(AMateria *left) {
 
-	std::cout << "\033[0;34m";
-	for (int i = 0; i <= this->eqSize; i++)
-		std::cout << i << ": " << inventory[i]->getType() << std::endl;
-	std::cout << "\033[0m";
+	AMateria **newFloor = new AMateria*[Character::fSize + 1];
+	int i = 0;
+	while (i++ < Character::fSize)
+		newFloor[i] = Character::floor[i];
+	newFloor[i] = left;
+	if (Character::floor != NULL)
+		delete[] Character::floor;
+	Character::floor = newFloor;
+	Character::fSize++;
 }
