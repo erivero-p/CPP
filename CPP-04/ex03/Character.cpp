@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:12:44 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/01 15:42:24 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/04 12:44:12 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void Character::equip(AMateria* m) {
 }
 
 void Character::unequip(int idx) {
+
 	if (idx >= iSize)
 		std::cout << "Incorrect index" << NL;
 	else
@@ -95,6 +96,7 @@ void Character::unequip(int idx) {
 		iSize--;
 	}
 }
+
 void Character::use(int idx, ICharacter& target) {
 
 	if (idx < 0 || idx > 3)
