@@ -6,18 +6,21 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 12:31:42 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/13 15:56:01 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/06 12:32:45 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog(void) : Animal() {
+
 	this->type = "Dog";
+	std::cout << GRAY << "Dog Constructor called" << RNL;
 }
 Dog::Dog(const Dog &cpy) : Animal(cpy) {
 
-	*this = cpy;	
+	*this = cpy;
+	std::cout << GRAY << "Dog Copy Constructor called" << RNL;
 }
 Dog&	Dog::operator=(const Dog &src) {
 
@@ -27,8 +30,9 @@ Dog&	Dog::operator=(const Dog &src) {
 }
 Dog::~Dog(void){
 
-	std::cout << "Dogn't"  << std::endl;
+	std::cout << RED << "Dog Destructor called" << RNL;
 }
+
 void	Dog::makeSound(void) const {
 	std::cout << "\033[1;33m";
 	std::cout << "Woof woof!" << std::endl;

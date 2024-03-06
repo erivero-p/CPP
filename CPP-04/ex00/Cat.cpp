@@ -6,18 +6,21 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 12:27:31 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/13 15:56:13 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/06 12:35:11 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 Cat::Cat(void) {
+
+	std::cout << GRAY << "Cat Constructor called" << RNL;
 	this->type = "Cat";
 }
 Cat::Cat(const Cat &cpy) {
 
-	*this = cpy;	
+	std::cout << GRAY << "Cat Copy Constructor called" << RNL;
+	*this = cpy;
 }
 Cat&	Cat::operator=(const Cat &src) {
 
@@ -26,7 +29,8 @@ Cat&	Cat::operator=(const Cat &src) {
 	return (*this);
 }
 Cat::~Cat(void){
-	std::cout << "Catn't" << std::endl;
+
+	std::cout << RED << "Cat Destructor called" << RNL;
 }
 
 void	Cat::makeSound(void) const {

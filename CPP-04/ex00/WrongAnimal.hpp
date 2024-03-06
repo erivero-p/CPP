@@ -12,6 +12,7 @@
 
 #pragma once
 #include <iostream>
+#include "Animal.hpp"
 
 class	WrongAnimal
 {

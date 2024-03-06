@@ -13,11 +13,13 @@
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(void) {
-	
+
+	std::cout << GRAY << "WrongAnimal Constructor called" << RNL;
 }
 
 WrongAnimal::WrongAnimal(std::string tp) : type(tp) {
-	
+
+	std::cout << GRAY << "WrongAnimal Type Constructor called" << RNL;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &cpy){
@@ -34,6 +36,7 @@ WrongAnimal&	WrongAnimal::operator=(const WrongAnimal &src) {
 
 WrongAnimal::~WrongAnimal(void) {
 
+	std::cout << RED << "WrongAnimal Destructor called" << RNL;
 }
 
 void	WrongAnimal::makeSound(void) const {
