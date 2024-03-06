@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:37:34 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/13 12:12:28 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/06 13:29:35 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 Brain::Brain(void) {
 
+	std::cout << GRAY << "Brain Constructor called" << RNL;
 }
 
 Brain::Brain(const Brain &cpy) {
-	
+
+	std::cout << GRAY << "Brain Copy Constructor called" << RNL;
 	*this = cpy;
 }
 
@@ -32,5 +34,6 @@ Brain&	Brain::operator=(const Brain &src) {
 }
 
 Brain::~Brain(void) {
-	
+
+	std::cout << RED << "Brain Destructor called" << RNL;
 }
