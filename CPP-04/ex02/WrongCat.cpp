@@ -13,11 +13,14 @@
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat(void) {
+
+	std::cout << GRAY << "WrongCat Constructor called" << RNL;
 	this->type = "WrongCat";
 	this->tm = new Brain();
 }
 WrongCat::WrongCat(const WrongCat &cpy) {
 
+	std::cout << GRAY << "WrongCat Copy Constructor called" << RNL;
 	*this = cpy;	
 }
 WrongCat&	WrongCat::operator=(const WrongCat &src) {
@@ -27,6 +30,8 @@ WrongCat&	WrongCat::operator=(const WrongCat &src) {
 	return (*this);
 }
 WrongCat::~WrongCat(void){
+
+	std::cout << RED << "WrongCat Destructor called" << RNL;
 	delete tm;
 }
 
