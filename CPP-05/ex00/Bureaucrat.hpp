@@ -6,27 +6,35 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 12:14:14 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/18 12:16:14 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/18 16:26:54 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+#include "../colours.hpp"
 
 class Bureaucrat
 {
 private:
 	const std::string	name;
-	unsigned int		range;
+	int					grade;
 public:
-	Bureaucrat(/* args */);
+	class GradeTooHighException : public std::exception {
+		const char *what() const throw();
+	};
+	class GradeTooLowException  : public std::exception {
+		const char *what() const throw();
+	};
+	Bureaucrat();
+	Bureaucrat(const std::string nm, int grade);
+	Bureaucrat(const Bureaucrat &src);
+	Bureaucrat &operator=(const Bureaucrat &src);
 	~Bureaucrat();
+	const std::string	&getName(void) const;
+	int					getGrade(void) const;
+	void	incrementGrade(void);
+	void	decrementGrade(void);
 };
 
-Bureaucrat::Bureaucrat(/* args */)
-{
-}
-
-Bureaucrat::~Bureaucrat()
-{
-}
+std::ostream& operator<<(std::ostream &, const Bureaucrat &);
