@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:46:34 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/19 11:40:49 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/19 12:46:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Bureaucrat::Bureaucrat(const std::string nm, int gr) : name(nm) {
 	try {
 		if (gr > 0 && gr < 151)
 			grade = gr;
-		else if (gr < 1)
+		else if (gr > 150)
 			throw(Bureaucrat::GradeTooLowException());
 		else
 			throw(Bureaucrat::GradeTooHighException());
@@ -43,8 +43,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src) {
 
 	if (this != &src)
 		this->grade = src.grade;
-	//el nombre no puede asiganrse porque es constante
-	//una vez declarado no se podrá cambiar
+	/* name cant be reasigned cause is const */
 	return (*this);
 }
 
