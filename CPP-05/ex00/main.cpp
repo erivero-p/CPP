@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:15:28 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/18 16:28:58 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/19 12:57:23 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int main (void)
 
 	Bureaucrat petit("Petit", 0);
 	Bureaucrat grande("Grande", 150);
-	grande.incrementGrade();
+	grande.decrementGrade();
 }

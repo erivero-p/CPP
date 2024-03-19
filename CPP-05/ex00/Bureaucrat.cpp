@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:46:34 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/19 12:48:15 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/19 12:58:53 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,18 @@ Bureaucrat::Bureaucrat() : name("Default"), grade(150) {
 Bureaucrat::Bureaucrat(const std::string nm, int gr) : name(nm) {
 
 	try {
-		if (gr > 0 && gr < 151)
+/* 		if (gr > 0 && gr < 151)
 			grade = gr;
 		else if (gr > 150)
 			throw(Bureaucrat::GradeTooLowException());
 		else
+			throw(Bureaucrat::GradeTooHighException()); */
+		if (gr < 1)
 			throw(Bureaucrat::GradeTooHighException());
+		else if (gr > 150)
+			throw(Bureaucrat::GradeTooLowException());
+		else
+			grade = gr;
 	}
 	catch (std::exception &e)
 	{
@@ -67,7 +73,7 @@ void	Bureaucrat::decrementGrade(void) {
 		if (grade < 150)
 			grade++;
 		else
-			throw(Bureaucrat::GradeTooHighException());
+			throw(Bureaucrat::GradeTooLowException());
 	}
 	catch (std::exception &e) {
 		std::cerr << e.what();
@@ -80,7 +86,7 @@ void	Bureaucrat::incrementGrade(void) {
 		if (grade > 1)
 			grade--;
 		else
-			throw(Bureaucrat::GradeTooLowException());
+			throw(Bureaucrat::GradeTooHighException());
 	}
 	catch (std::exception &e) {
 		std::cerr << e.what();
