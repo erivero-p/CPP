@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:46:34 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/18 16:28:15 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:40:49 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	Bureaucrat::getGrade(void) const {
 	return (this->grade);
 }
 
-void	Bureaucrat::incrementGrade(void) {
+void	Bureaucrat::decrementGrade(void) {
 
 	try {
 		if (grade < 150)
@@ -75,7 +75,7 @@ void	Bureaucrat::incrementGrade(void) {
 	}
 }
 
-void	Bureaucrat::decrementGrade(void) {
+void	Bureaucrat::incrementGrade(void) {
 
 	try {
 		if (grade > 1)
