@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:55:12 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/20 11:43:38 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:54:15 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ public:
 		const char *what() const throw();
 	};
 
-	const std::string	getName(void);
-	bool				getSignStatus(void);
-	int					getSignRange(void);
-	int					getExecRange(void);
+	const std::string	getName(void) const;
+	bool				getSignStatus(void) const;
+	int					getSignGrade(void) const;
+	int					getExecGrade(void) const;
 
 	void	beSigned(Bureaucrat &bureau);
 };

@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 12:32:37 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/20 14:18:16 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:56:32 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,27 +55,28 @@ const char *Form::GradeTooLowException::what() const throw() {
 	return (YELLOW"[FORM] Grade Too Low"RNL);
 }
 
-const std::string	Form::getName(void) {
+const std::string	Form::getName(void) const {
 
 	return (this->name);
 }
-bool	Form::getSignStatus(void) {
+bool	Form::getSignStatus(void) const {
 	
 	return (this->sgnd);
 }
-int	Form::getSignRange(void) {
+int	Form::getSignGrade(void) const {
 	
 	return (this->toSign);
 }
-int	Form::getExecRange(void) {
+int	Form::getExecGrade(void) const {
 
 	return (this->toExec);
 }
 
 void	Form::beSigned(Bureaucrat &bureau) {
 
-	try {
-		if (bureau.getGrade() <= toSign) // the lower number the higher range
+	try 
+	{
+		if (bureau.getGrade() <= toSign) // the lower number the higher Grade
 		{
 			this->sgnd = true;
 			std::cout << GREEN << bureau.getName() << " signed ";
@@ -88,4 +89,11 @@ void	Form::beSigned(Bureaucrat &bureau) {
 		std::cout << YELLOW << bureau.getName() << " couldn't sign " << name << " because: ";
 		std::cerr << e.what();
 	}
+}
+
+std::ostream& operator<<(std::ostream &oso, const Form &fm) {
+
+	oso << "Form: " << fm.getName() << ", required grade to be signed: " << fm.getSignGrade() \
+	<< ", required grade to be executed: " << fm.getExecGrade() << std::endl;
+	return (oso);
 }

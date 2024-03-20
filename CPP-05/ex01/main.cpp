@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:15:28 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/20 14:18:35 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:56:04 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ int main (void)
 	Form		c_42("super important stuff", 10, 10);
 	Bureaucrat  presi("President", 1);
 	
+	std::cout << c_42;
 	std::cout << philippe;
-	philippe.signForm(c_42);
 	std::cout << presi;
+	philippe.signForm(c_42);
 	presi.signForm(c_42);
 }
