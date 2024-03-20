@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:46:34 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/19 13:22:13 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/20 11:44:20 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,9 +102,10 @@ const char *Bureaucrat::GradeTooLowException::what() const throw() {
 	return (RED"[EXEPTION] Grade Too Low"RNL);
 }
 
-Bureaucrat::signForm(Form &fm) {
+void Bureaucrat::signForm(Form &fm) {
 
-	if (fm.getSignedStatus())
+	if (fm.getSignStatus())
 		std::cout << this->name << " couldn't sign" << fm.getName() << " because form is already signed\n";
 	else
+		fm.beSigned(*this);
 }

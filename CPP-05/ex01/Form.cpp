@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 12:32:37 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/19 13:13:16 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:18:16 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ Form &Form::operator=(const Form &src) {
 
 	if (this != &src)
 		this->sgnd = src.sgnd;
+	return (*this);
 }
-~Form() {
+
+Form::~Form() {
 
 }
 
@@ -61,19 +63,29 @@ bool	Form::getSignStatus(void) {
 	
 	return (this->sgnd);
 }
-const int	Form::getSignRange(void) {
+int	Form::getSignRange(void) {
 	
 	return (this->toSign);
 }
-const int	Form::getExecRange(void) {
+int	Form::getExecRange(void) {
 
 	return (this->toExec);
 }
 
 void	Form::beSigned(Bureaucrat &bureau) {
 
-	this->signed = true;
-	/* I'd like to make this function return an error code 
-	if the form is already signed so the signForm() function can print
-	the correct error */
+	try {
+		if (bureau.getGrade() <= toSign) // the lower number the higher range
+		{
+			this->sgnd = true;
+			std::cout << GREEN << bureau.getName() << " signed ";
+			std::cout << this->getName() << RNL;
+		}
+		else
+			throw(Form::GradeTooLowException());
+	}
+	catch(const std::exception& e) {
+		std::cout << YELLOW << bureau.getName() << " couldn't sign " << name << " because: ";
+		std::cerr << e.what();
+	}
 }

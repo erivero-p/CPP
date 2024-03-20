@@ -6,13 +6,15 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:55:12 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/19 13:15:13 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/20 11:43:38 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "../colours.hpp"
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -37,8 +39,8 @@ public:
 
 	const std::string	getName(void);
 	bool				getSignStatus(void);
-	const int			getSignRange(void);
-	const int			getExecRange(void);
+	int					getSignRange(void);
+	int					getExecRange(void);
 
 	void	beSigned(Bureaucrat &bureau);
 };

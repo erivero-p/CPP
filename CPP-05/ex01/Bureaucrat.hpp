@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 12:14:14 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/19 12:24:27 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/20 11:44:57 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <iostream>
 #include "../colours.hpp"
 #include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -37,7 +39,7 @@ public:
 	void				incrementGrade(void);
 	void				decrementGrade(void);
 	
-	signForm(Form &fm);
+	void signForm(Form &fm);
 };
 
 std::ostream& operator<<(std::ostream &, const Bureaucrat &);
