@@ -108,7 +108,7 @@ void	AForm::beSigned(Bureaucrat &bureau) {
 
 std::ostream& operator<<(std::ostream &oso, const AForm &fm) {
 
-	oso << "AForm: " << fm.getName() << ", required grade to be signed: " << fm.getSignGrade() \
+	oso << "Form: " << fm.getName() << ", required grade to be signed: " << fm.getSignGrade() \
 	<< ", required grade to be executed: " << fm.getExecGrade() << std::endl;
 	return (oso);
 }
