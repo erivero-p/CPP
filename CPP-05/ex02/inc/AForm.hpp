@@ -13,6 +13,7 @@
 #pragma once
 #include "../../colours.hpp"
 #include "Bureaucrat.hpp"
+#include <fstream> 
 
 class Bureaucrat;
 
@@ -26,7 +27,7 @@ private:
 	const int			toExec;
 public:
 	AForm();
-	AForm(const std::string nm, const int ts, const int te);
+	AForm(const std::string nm, const std::string tg, const int ts, const int te);
 	AForm(const AForm &src);
 	AForm &operator=(const AForm &src);
 	~AForm();
@@ -39,12 +40,13 @@ public:
 	};
 
 	const std::string	getName(void) const;
+	const std::string	getTarget(void) const;
 	bool				getSignStatus(void) const;
 	int					getSignGrade(void) const;
 	int					getExecGrade(void) const;
 
 	void	beSigned(Bureaucrat &bureau);
-	virtual void execute(Bureaucrat const &executor) = 0;
+	virtual void execute(Bureaucrat const &executor) const = 0;
 };
 
 std::ostream& operator<<(std::ostream &, const AForm &);

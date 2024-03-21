@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:15:28 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/20 16:10:11 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/21 12:28:04 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 int main (void)
 {
 	Bureaucrat	philippe("Philippe", 150);
-	ShrubberyCreationForm		c_42("super important stuff");
+	ShrubberyCreationForm		sc("SC42", "trees");
 	Bureaucrat  presi("President", 1);
 	
-	std::cout << c_42;
+	std::cout << sc;
 	std::cout << philippe;
 	std::cout << presi;
-	philippe.signForm(c_42);
-	presi.signForm(c_42);
+	philippe.signForm(sc);
+	presi.executeForm(sc);
+	presi.signForm(sc);
+	presi.executeForm(sc);
+	philippe.executeForm(sc);
 }

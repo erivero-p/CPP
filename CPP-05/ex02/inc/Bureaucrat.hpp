@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 12:14:14 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/20 15:31:22 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/21 12:14:22 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ public:
 	void				decrementGrade(void);
 	
 	void signForm(AForm &fm);
+	void executeForm(AForm const &fm);
 };
 
 std::ostream& operator<<(std::ostream &, const Bureaucrat &);

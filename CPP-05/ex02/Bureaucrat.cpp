@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:46:34 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/20 15:32:20 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/21 13:00:11 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,26 @@ const char *Bureaucrat::GradeTooLowException::what() const throw() {
 void Bureaucrat::signForm(AForm &fm) {
 
 	if (fm.getSignStatus())
-		std::cout << this->name << " couldn't sign" << fm.getName() << " because AForm is already signed\n";
+		std::cout << this->name << " couldn't sign" << fm.getName() << " because form is already signed\n";
 	else
 		fm.beSigned(*this);
+}
+
+void Bureaucrat::executeForm(const AForm &fm) {
+
+	if (!fm.getSignStatus())
+	{
+		std::cout << RED << name << " couldn't execute " << fm.getName() << " because it's not signed yet" << RNL;
+		return ;
+	}
+	try
+	{
+		fm.execute(*this);
+		std::cout <<  GREEN << name << " executed " << fm.getName() << RNL;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << YELLOW << name << " couldn't execute " << fm.getName() << " because: ";
+		std::cerr << e.what();
+	}
 }

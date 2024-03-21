@@ -12,11 +12,12 @@
 
 #include "inc/AForm.hpp"
 
-AForm::AForm() : name ("default"), toSign(150), toExec(150) {
+AForm::AForm() : name("default"), target("defaultTarget"), toSign(150), toExec(150) {
 
 	this->sgnd = false;
 }
-AForm::AForm(const std::string nm, const int ts, const int te) : name(nm), toSign(ts), toExec(te){
+
+AForm::AForm(const std::string nm, const std::string tg, const int ts, const int te) : name(nm), target(tg), toSign(ts), toExec(te){
 
 	this->sgnd = false;
 	try
@@ -31,10 +32,12 @@ AForm::AForm(const std::string nm, const int ts, const int te) : name(nm), toSig
 		std::cerr << e.what();
 	}
 }
-AForm::AForm(const AForm &src) : name(src.name), toSign(src.toSign), toExec(src.toExec){
+
+AForm::AForm(const AForm &src) : name(src.name), toSign(src.toSign), toExec(src.toExec) {
 
 	this->sgnd = src.sgnd;
 }
+
 AForm &AForm::operator=(const AForm &src) {
 
 	if (this != &src)
@@ -59,6 +62,12 @@ const std::string	AForm::getName(void) const {
 
 	return (this->name);
 }
+
+const std::string	AForm::getTarget(void) const {
+
+	return (this->target);
+}
+
 bool	AForm::getSignStatus(void) const {
 	
 	return (this->sgnd);
