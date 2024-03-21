@@ -38,6 +38,9 @@ public:
 	class GradeTooLowException  : public std::exception {
 		const char *what() const throw();
 	};
+	class NotSignedExeption  : public std::exception {
+		const char *what() const throw();
+	};
 
 	const std::string	getName(void) const;
 	const std::string	getTarget(void) const;

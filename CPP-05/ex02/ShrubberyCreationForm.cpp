@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 15:57:26 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/21 12:56:38 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/21 13:08:52 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,11 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 
-	if (getExecGrade() >= executor.getGrade() && getSignStatus())
+	if (!getSignStatus())
+		throw(ShrubberyCreationForm::NotSignedExeption());
+	else if (getExecGrade() < executor.getGrade())
+		throw(ShrubberyCreationForm::GradeTooLowException());
+	else
 	{  //c_str() is to cast from std::string to char *
 		std::ofstream	file((this->getTarget() + "_shrubbery").c_str());
 		file << "               ,@@@@@@@," << std::endl
@@ -55,8 +59,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 		<< "       |.|        | |         | |" << std::endl
 		<< "    \\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_" << std::endl;
 	}
-	else 
-		throw(ShrubberyCreationForm::GradeTooLowException());
 }
 /* 	catch(const std::exception& e)
 	{

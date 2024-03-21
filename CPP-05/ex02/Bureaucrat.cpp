@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:46:34 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/21 13:00:11 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/21 13:10:02 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,11 +112,11 @@ void Bureaucrat::signForm(AForm &fm) {
 
 void Bureaucrat::executeForm(const AForm &fm) {
 
-	if (!fm.getSignStatus())
+/* 	if (!fm.getSignStatus())
 	{
 		std::cout << RED << name << " couldn't execute " << fm.getName() << " because it's not signed yet" << RNL;
 		return ;
-	}
+	} */
 	try
 	{
 		fm.execute(*this);
@@ -124,7 +124,7 @@ void Bureaucrat::executeForm(const AForm &fm) {
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << YELLOW << name << " couldn't execute " << fm.getName() << " because: ";
+		std::cout << RED << name << " couldn't execute " << fm.getName() << " because: ";
 		std::cerr << e.what();
 	}
 }

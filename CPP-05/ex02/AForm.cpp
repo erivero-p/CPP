@@ -51,11 +51,17 @@ AForm::~AForm() {
 
 const char *AForm::GradeTooHighException::what() const throw() {
 
-	return (YELLOW"[AForm] Grade Too High"RNL);
+	return (RED"[AForm] Grade Too High"RNL);
 }
+
 const char *AForm::GradeTooLowException::what() const throw() {
-	
-	return (YELLOW"[AForm] Grade Too Low"RNL);
+
+	return (RED"Grade Too Low"RNL);
+}
+
+const char *AForm::NotSignedExeption::what() const throw() {
+
+	return (RED"Form Not Signed"RNL);
 }
 
 const std::string	AForm::getName(void) const {
@@ -95,7 +101,7 @@ void	AForm::beSigned(Bureaucrat &bureau) {
 			throw(AForm::GradeTooLowException());
 	}
 	catch(const std::exception& e) {
-		std::cout << YELLOW << bureau.getName() << " couldn't sign " << name << " because: ";
+		std::cout << RED << bureau.getName() << " couldn't sign " << name << " because: ";
 		std::cerr << e.what();
 	}
 }
