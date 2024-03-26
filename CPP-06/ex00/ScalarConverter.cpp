@@ -6,12 +6,29 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:48:15 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/26 12:50:04 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/26 13:25:54 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
+ScalarConverter::ScalarConverter(void){
+	
+}
+
+ScalarConverter::ScalarConverter(const ScalarConverter &src) {
+
+	(void)src;
+}
+
+ScalarConverter::~ScalarConverter(void) {
+}
+
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &src) {
+
+	(void)src;
+	return (*this);
+}
 int	ft_filter(std::string str) {
 
 	char *endptr;
