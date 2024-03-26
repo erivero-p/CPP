@@ -6,12 +6,12 @@
 #    By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 13:16:08 by erivero-          #+#    #+#              #
-#    Updated: 2024/03/22 17:12:12 by erivero-         ###   ########.fr        #
+#    Updated: 2024/03/26 11:56:31 by erivero-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = Intern
+NAME = ScalarConverter
 
 CPP = c++
 

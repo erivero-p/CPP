@@ -1,39 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/22 11:10:52 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/26 11:27:55 by erivero-         ###   ########.fr       */
+/*   Created: 2024/03/26 11:53:20 by erivero-          #+#    #+#             */
+/*   Updated: 2024/03/26 11:55:04 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <iostream>
-#include <limits>
-#include <cfloat>
-#include <cmath>
+#include "ScalarConverter.hpp"
 
-class ScalarConverter
+int	main(int argc, char **argv)
 {
-private:
-	ScalarConverter();
-	ScalarConverter(ScalarConverter &);
-	ScalarConverter &operator=(ScalarConverter &);
-public:
-	~ScalarConverter();
-	static void	convert(const std::string);
-};
-
-enum {
-	ERROR = -1,
-	CHAR = 0,
-	INT,
-	FLOAT,
-	DOUBLE,
-	OFLOW,
-	PSF,
-	PSD
-};
+	if (argc != 2)
+	{
+		std::cout << "Usage: ./ScalarConverter input_to_convert" << std::endl;
+		return (1);	
+	}
+	ScalarConverter::convert(argv[1]);
+	return (0);
+}
