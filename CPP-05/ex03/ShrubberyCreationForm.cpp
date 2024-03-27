@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 15:57:26 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/21 15:43:43 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/27 11:00:22 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 
 	if (!getSignStatus())
-		throw(ShrubberyCreationForm::NotSignedExeption());
+		throw(ShrubberyCreationForm::NotSignedException());
 	else if (getExecGrade() < executor.getGrade())
 		throw(ShrubberyCreationForm::GradeTooLowException());
 	else

@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:46:34 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/19 13:01:31 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/27 11:00:08 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,9 +95,9 @@ std::ostream& operator<<(std::ostream &oso, const Bureaucrat &bureau) {
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
 
-	return (RED"[EXEPTION] Grade Too High"RNL);
+	return (RED"[EXCEPTION] Grade Too High"RNL);
 }
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
 
-	return (RED"[EXEPTION] Grade Too Low"RNL);
+	return (RED"[EXCEPTION] Grade Too Low"RNL);
 }

@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 14:41:49 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/21 15:44:49 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/27 11:00:22 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 
 	if (!getSignStatus())
-		throw(RobotomyRequestForm::NotSignedExeption());
+		throw(RobotomyRequestForm::NotSignedException());
 	else if (getExecGrade() < executor.getGrade())
 		throw(RobotomyRequestForm::GradeTooLowException());
 	else

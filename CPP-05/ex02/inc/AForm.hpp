@@ -38,7 +38,7 @@ public:
 	class GradeTooLowException  : public std::exception {
 		const char *what() const throw();
 	};
-	class NotSignedExeption  : public std::exception {
+	class NotSignedException  : public std::exception {
 		const char *what() const throw();
 	};
 

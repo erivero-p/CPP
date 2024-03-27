@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:20:17 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/21 15:45:28 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/27 11:00:22 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ PresidentialPardonForm::~PresidentialPardonForm() {
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const {
 
 	if (!getSignStatus())
-		throw(PresidentialPardonForm::NotSignedExeption());
+		throw(PresidentialPardonForm::NotSignedException());
 	else if (getExecGrade() < executor.getGrade())
 		throw(PresidentialPardonForm::GradeTooLowException());
 	else
