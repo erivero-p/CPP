@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:48:15 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/28 15:13:19 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/28 16:01:48 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,11 +96,11 @@ void	print_cast_float(float f)
 	else
 		std::cout << "int: non displayable due to overflow" << std::endl;
 	if (f > FLT_MIN && f < FLT_MAX)
-		std::cout << "float: " << f << (std::round(f) == f ? ".0" : "") << std::endl;
+		std::cout << "float: " << std::setprecision(7) << f << (std::round(f) == f ? ".0" : "f") << std::endl;
 	else
 		std::cout << "float: non displayable due to overflow" << std::endl;
 	if (f > DBL_MIN && f < DBL_MAX)
-		std::cout << "double: " << static_cast<double>(f) << (std::round(f) == f ? ".0" : "") << std::endl;
+		std::cout << "double: " << std::setprecision(7) << static_cast<double>(f) << (std::round(f) == f ? ".0" : "") << std::endl;
 	else
 		std::cout << "double: non displayable due to overflow" << std::endl;
 }
@@ -113,15 +113,15 @@ void	print_cast_double(double d)
 	else	
 		std::cout << "char non printable" << std::endl;
 	if (d > INT_MIN && d < INT_MAX)
-		std::cout << "int: " << d << std::endl;
+		std::cout << "int: " << static_cast<int>(d) << std::endl;
 	else
 		std::cout << "int: non displayable due to overflow" << std::endl;
 	if (d > FLT_MIN && d < FLT_MAX)
-		std::cout << "float: " << static_cast<float>(d) << (std::round(d) == d ? ".0f" : "f") << std::endl;
+		std::cout << "float: " << std::setprecision(7) << static_cast<float>(d) << (std::round(d) == d ? ".0f" : "f") << std::endl;
 	else
 		std::cout << "float: non displayable due to overflow" << std::endl;
 	if (d > DBL_MIN && d< DBL_MAX)
-		std::cout << "double: " << d << (std::round(d) == d ? ".0" : "") << std::endl;
+		std::cout << "double: " << std::setprecision(7) << d << (std::round(d) == d ? ".0" : "") << std::endl;
 	else
 		std::cout << "double: non displayable due to overflow" << std::endl;
 }

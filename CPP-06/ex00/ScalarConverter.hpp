@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:52 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/26 13:24:10 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/28 15:32:35 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <limits>
 #include <cfloat>
 #include <cmath>
+#include <iomanip>
 
 class ScalarConverter
 {
