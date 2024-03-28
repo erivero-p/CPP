@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 13:12:28 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/26 16:00:45 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/28 15:14:36 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,4 @@ public:
 	~Serializer();
 	static uintptr_t serialize(Data* ptr);
 	static Data* deserialize(uintptr_t raw);
-} ;
+};

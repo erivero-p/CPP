@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 16:28:54 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/26 17:26:51 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/28 15:15:44 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void identify(Base* p) {
 }
 
 void identify(Base &p) {
-//references can't be NULL, in this case, if the cast fails, 
-//it will trhrow an exeption
+//references can't be NULL, in this case,
+// if the cast fails, it will trhrow an exeption
 	try {
 		A &a = dynamic_cast<A &>(p);
 		(void)a;

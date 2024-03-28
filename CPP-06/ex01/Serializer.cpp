@@ -6,13 +6,13 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:46:11 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/26 16:03:46 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/28 15:14:23 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 
-Serializer::Serializer(void){
+Serializer::Serializer(void) {
 	
 }
 

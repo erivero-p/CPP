@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:48:15 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/26 13:25:54 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/03/28 15:13:19 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &src) {
 	(void)src;
 	return (*this);
 }
+
 int	ft_filter(std::string str) {
 
 	char *endptr;
@@ -134,7 +135,6 @@ void	print_cast_psel(std::string str, int flag)
 	else // if it was a floaat, its displayed w/out the 'f'
 		std::cout << "double: " << str.substr(0, str.length() - 1) << std::endl;
 }
-			
 
 void	ScalarConverter::convert(const std::string str) {
 
