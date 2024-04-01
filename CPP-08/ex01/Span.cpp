@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 16:09:35 by erivero-          #+#    #+#             */
-/*   Updated: 2024/04/01 16:30:51 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/04/01 16:57:19 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,83 +44,42 @@ Span::~Span(void) {
 
 void Span::addNumber(int num) {
 
-	try {
-		if (this->stack.size() >= this->size)
-			throw(Span::SpanFullException());
-		stack.push_back(num);
-	}
-	catch (std::exception &e) {
-		std::cerr << "\033[0;31m" << e.what() << "\033[0m\n";
-	}
+	if (this->stack.size() >= this->size)
+		throw(Span::SpanFullException());
+	stack.push_back(num);
 }
 
 unsigned int Span::longestSpan(void) {
 
-	try {
-		if (this->stack.empty() >= this->size || this->stack.size() < 2)
-			throw(Span::SpanEmptyException());
-		std::list<int>::iterator	min = std::min_element(stack.begin(), stack.end());
-		std::list<int>::iterator	max = std::max_element(stack.begin(), stack.end());
-		return (*max - *min);
-	}
-	catch (std::exception &e) {
-		std::cerr << "\033[0;31m" << e.what() << "\033[0m\n";
-	}
-	return (0);
+	if (this->stack.empty() >= this->size || this->stack.size() < 2)
+		throw(Span::SpanEmptyException());
+	std::list<int>::iterator	min = std::min_element(stack.begin(), stack.end());
+	std::list<int>::iterator	max = std::max_element(stack.begin(), stack.end());
+	return (*max - *min);
+
 }
 
-/* unsigned int  Span::shortestSpan(void) {
-
-	try {
-		if (this->stack.empty() >= this->size)
-			throw(Span::SpanEmptyException());
-		std::list<int> sorted = stack;
-		sorted.sort();
-		int diff = INT_MAX;
-		for (std::list<int>::iterator i = sorted.begin(); i != sorted.end(); i++) {
-			int current_diff = *(std::next(i)) - *i;
-			if (current_diff < diff)
-				diff = current_diff;
-		}
-		return (diff);
-	}
-	catch (std::exception &e) {
-		std::cerr << "\033[0;31m" << e.what() << "\033[0m\n";
-	}
-	return (0);
-} */
 
 unsigned int  Span::shortestSpan(void) {
 
-	try {
-		if (this->stack.empty() || this->stack.size() < 2)
-			throw(Span::SpanEmptyException());
-		std::list<int> sorted = stack;
-		sorted.sort();
-		int diff = INT_MAX;
-		for (std::list<int>::iterator i = sorted.begin(); std::next(i) != sorted.end(); i++) {
-			int current_diff = *(std::next(i)) - *i;
-			if (current_diff < diff)
-				diff = current_diff;
-		}
-		return (diff);
+	if (this->stack.empty() || this->stack.size() < 2)
+		throw(Span::SpanEmptyException());
+	std::list<int> sorted = stack;
+	sorted.sort();
+	int diff = INT_MAX;
+	for (std::list<int>::iterator i = sorted.begin(); std::next(i) != sorted.end(); i++) {
+		int current_diff = *(std::next(i)) - *i;
+		if (current_diff < diff)
+			diff = current_diff;
 	}
-	catch (std::exception &e) {
-		std::cerr << "\033[0;31m" << e.what() << "\033[0m\n";
-	}
-	return (0);
+	return (diff);
 }
 
 void Span::fillSpan(std::list<int>::const_iterator first, std::list<int>::const_iterator last) {
 
-	try {
-		if (std::distance(first, last) > size)
-			throw(Span::SpanFullException());
-		stack.insert(stack.end(), first, last);
-	}
-	catch (std::exception &e) {
-		std::cerr << "\033[0;31m" << e.what() << "\033[0m\n";
-	}
+	if (std::distance(first, last) > size)
+		throw(Span::SpanFullException());
+	stack.insert(stack.end(), first, last);
 }
 
 const char *Span::SpanFullException::what() const throw() {
