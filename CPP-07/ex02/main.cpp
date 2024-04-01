@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:54:57 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/28 14:58:09 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:54:17 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << "\033[0;31m" << e.what() << "\033[0m\n";
 	}
 	return (0);
 };
