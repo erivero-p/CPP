@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 16:09:35 by erivero-          #+#    #+#             */
-/*   Updated: 2024/04/01 16:15:22 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/04/01 16:30:51 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void Span::addNumber(int num) {
 unsigned int Span::longestSpan(void) {
 
 	try {
-		if (this->stack.empty() >= this->size)
+		if (this->stack.empty() >= this->size || this->stack.size() < 2)
 			throw(Span::SpanEmptyException());
 		std::list<int>::iterator	min = std::min_element(stack.begin(), stack.end());
 		std::list<int>::iterator	max = std::max_element(stack.begin(), stack.end());
@@ -69,7 +69,7 @@ unsigned int Span::longestSpan(void) {
 	return (0);
 }
 
-unsigned int  Span::shortestSpan(void) {
+/* unsigned int  Span::shortestSpan(void) {
 
 	try {
 		if (this->stack.empty() >= this->size)
@@ -88,7 +88,29 @@ unsigned int  Span::shortestSpan(void) {
 		std::cerr << "\033[0;31m" << e.what() << "\033[0m\n";
 	}
 	return (0);
+} */
+
+unsigned int  Span::shortestSpan(void) {
+
+	try {
+		if (this->stack.empty() || this->stack.size() < 2)
+			throw(Span::SpanEmptyException());
+		std::list<int> sorted = stack;
+		sorted.sort();
+		int diff = INT_MAX;
+		for (std::list<int>::iterator i = sorted.begin(); std::next(i) != sorted.end(); i++) {
+			int current_diff = *(std::next(i)) - *i;
+			if (current_diff < diff)
+				diff = current_diff;
+		}
+		return (diff);
+	}
+	catch (std::exception &e) {
+		std::cerr << "\033[0;31m" << e.what() << "\033[0m\n";
+	}
+	return (0);
 }
+
 void Span::fillSpan(std::list<int>::const_iterator first, std::list<int>::const_iterator last) {
 
 	try {
@@ -108,5 +130,5 @@ const char *Span::SpanFullException::what() const throw() {
 
 const char *Span::SpanEmptyException::what() const throw() {
 	
-	return("Span is empty yet");
+	return("There's not enough elements on Span to calculate");
 }
