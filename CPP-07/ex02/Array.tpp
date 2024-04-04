@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:01:18 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/28 14:53:01 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/04/02 13:21:35 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ template<typename T>
 Array<T>::Array(const Array &src) {
 
 	elements = new T[src.count];
-	for (int i = 0; i <= src.count; i++)
+	for (unsigned int i = 0; i <= src.count; i++)
 		elements[i] = src.elements[i];
 	count = src.count;
 }

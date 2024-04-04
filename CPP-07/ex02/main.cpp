@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:54:57 by erivero-          #+#    #+#             */
-/*   Updated: 2024/04/01 12:54:17 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/04/04 13:18:14 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int main(void)
 {
+
+	std::cout << "**** block with strings *****" << std::endl;
 	Array<std::string> strs(2);
 	try
 	{
@@ -29,6 +31,7 @@ int main(void)
 	{
 		std::cerr << "\033[0;31m" << e.what() << "\033[0m\n";
 	}
+	std::cout << "**** block with ints *****" << std::endl;
 	try
 	{
 		Array<int> ints(3);
