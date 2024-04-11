@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:08:09 by erivero-          #+#    #+#             */
-/*   Updated: 2024/04/10 17:02:43 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/04/11 16:36:45 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ public:
 	void	parseDatabase(void);
 	double	parseLine(std::string line, int flag);
 	void	parseFile(std::string infile);
+	int		checkDate(std::tm date);
+	void	displayOutput(std::tm date, double value);
+
 /* 	class FileProblem : public std::exception {
 		const char *what(int flag) const throw();
 	} */

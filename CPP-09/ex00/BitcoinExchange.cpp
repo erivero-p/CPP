@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:47:04 by erivero-          #+#    #+#             */
-/*   Updated: 2024/04/10 17:26:15 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/04/11 17:14:46 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,30 @@ void	BitcoinExchange::parseFile(std::string infile)
 		date.tm_hour = 0;
 		date.tm_min = 0;
 		date.tm_sec = 0;
+		if (checkDate(date))
+			throw (std::runtime_error("Error: wrong date format"));
+		
 	/* this would be the moment to compare the line with the database and print the output I guess */
 	}
+}
+
+void BitcoinExchange::displayOutput(std::tm date, double value)
+{
+	std::map<time_t, double>::iterator it = dataBase.begin();
+	time_t time = mktime(&date);
+	if (time < it->first)
+		throw (std::runtime_error("Error: wrong date format"));
+
+}
+
+int	BitcoinExchange::checkDate(std::tm date)
+{
+	int days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	if (date.tm_mon + 1 < 1 || date.tm_mon + 1 > 12)
+		return (1);
+    if (((date.tm_year % 4 == 0) && (date.tm_year % 100 != 0)) || (date.tm_year % 400 == 0)) 
+		days[1]++; // if it's a lap year, we add a day to February
+	if (date.tm_mday < 1 || date.tm_mday > days[date.tm_mon])
+		return (1);
+	return (0);
 }
