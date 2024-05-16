@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 16:09:35 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/15 16:19:16 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/05/16 16:06:56 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ unsigned int Span::longestSpan(void) {
 	std::list<int>::iterator	min = std::min_element(stack.begin(), stack.end());
 	std::list<int>::iterator	max = std::max_element(stack.begin(), stack.end());
 	return (*max - *min);
-
 }
 
 unsigned int  Span::shortestSpan(void) {
@@ -82,11 +81,11 @@ void Span::fillSpan(std::list<int>::const_iterator first, std::list<int>::const_
 }
 
 const char *Span::SpanFullException::what() const throw() {
-	
+
 	return("There's no space left on the Span for the required insertion");
 }
 
 const char *Span::SpanEmptyException::what() const throw() {
-	
+
 	return("There's not enough elements on Span to calculate");
 }

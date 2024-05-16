@@ -6,26 +6,20 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:04:24 by erivero-          #+#    #+#             */
-/*   Updated: 2024/04/01 16:56:10 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/05/16 16:16:53 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-std::list <int> ft_list(void)
-{
-	std::list<int> stack;
-	stack.push_back(3);
-	stack.push_back(14);
-	stack.push_back(15);
-	stack.push_back(9);
-	return(stack);
-}
-
 int	main(void) {
 
 	Span A(5);
-	std::list<int> lst = ft_list();
+	std::list<int> lst;
+	lst.push_back(3);
+	lst.push_back(14);
+	lst.push_back(15);
+	lst.push_back(9);
 
 	try {
 		A.fillSpan(lst.begin(), lst.end());
@@ -38,4 +32,5 @@ int	main(void) {
 	{
 		std::cerr << "\033[0;31m" << e.what() << "\033[0m\n";
 	}
+	return (0);
 }

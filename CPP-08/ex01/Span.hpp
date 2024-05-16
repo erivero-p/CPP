@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 16:10:09 by erivero-          #+#    #+#             */
-/*   Updated: 2024/04/01 16:13:10 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/05/16 16:11:53 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ public:
 	Span &operator=(const Span& src);
 	~Span(void);
 	void addNumber(int num);
+// finds out the shortest distance between all the numbers stored
 	unsigned int shortestSpan(void);
+// finds out the longest distance between all the numbers stored
 	unsigned int longestSpan(void);
+// fills the span receibing a range of iterators
 	void fillSpan(std::list<int>::const_iterator first, std::list<int>::const_iterator last);
 	class SpanFullException : public std::exception {
 		const char *what () const throw();
