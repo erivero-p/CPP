@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 16:09:35 by erivero-          #+#    #+#             */
-/*   Updated: 2024/04/01 16:57:19 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:19:16 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ unsigned int Span::longestSpan(void) {
 	return (*max - *min);
 
 }
-
 
 unsigned int  Span::shortestSpan(void) {
 
