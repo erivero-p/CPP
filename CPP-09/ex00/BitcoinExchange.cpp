@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:47:04 by erivero-          #+#    #+#             */
-/*   Updated: 2024/04/15 14:13:14 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/05/17 11:31:25 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	BitcoinExchange::parseDatabase(void)
 /* maps are associative containers, they will take two types of data and associate then together,
 to "pack" data and value in this case, for inserting them in the map, we use the std::pair template 
 the mktime function will convert the tm structure in a time_t variable */
-
 
 double	BitcoinExchange::parseLine(std::string line, int flag)
 {
