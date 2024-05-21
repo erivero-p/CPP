@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:41:26 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/20 15:53:39 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/05/21 16:19:13 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,29 @@
 #include <iostream>
 #include <vector>
 #include <deque>
-
-//does it have to work with one argument between comillas?
+#include <list>
+#include <algorithm>
+#include <sys/time.h>
 
 class PmergeMe {
 	private:
 		std::vector<int> vt;
 		std::deque<int> dq;
+//		std::list<int> ls;
 		PmergeMe(void);
-	public:
-		//static void inputChecker(std::string input);
-		PmergeMe(char **args);
 		PmergeMe(const PmergeMe &src);
 		PmergeMe &operator=(const PmergeMe &src);
+	public:
+		PmergeMe(char **args);
 		~PmergeMe(void);
 
 		void	setVector(char **arg);
 		void	setDeque(char **arg);
+		void	setList(char **arg);
 		void	sortVector(void);
 		void	sortDeque(void);
-		void 	printResult(char **args);
-
+//		void	sortList(void);
+		void 	SortAndPrint(char **args);
 };
 
 #include "FordJohnson.tpp"
