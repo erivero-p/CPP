@@ -6,17 +6,16 @@
 #    By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 13:16:08 by erivero-          #+#    #+#              #
-#    Updated: 2024/05/20 15:52:06 by erivero-         ###   ########.fr        #
+#    Updated: 2024/05/23 16:01:28 by erivero-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = PmergeMe
 
-CPP = c++
+CPP = g++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
-
+FLAGS = -Wall -Wextra -Werror -std=c++98 -I /usr/bin/
 SRC = main.cpp PmergeMe.cpp
 
 OBJ = $(SRC:.cpp=.o)
