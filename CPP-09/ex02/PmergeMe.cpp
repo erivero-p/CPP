@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:30:21 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/21 16:19:26 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/05/23 15:12:53 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,24 @@ PmergeMe::~PmergeMe(void) {
 
 PmergeMe::PmergeMe(char **args) {
 
+	struct timeval	time;
 	try {
+		gettimeofday(&time, NULL);
+		this->vtTime[0]	= time.tv_usec;
 		setVector(args);
 	}
 	catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
-	setDeque(args);
-	
 	sortVector();
+	gettimeofday(&time, NULL);
+	this->vtTime[1] = time.tv_usec;
+	gettimeofday(&time, NULL);
+	this->dqTime[0] = time.tv_usec;	
+	setDeque(args);
 	sortDeque();
+	gettimeofday(&time, NULL);
+	this->dqTime[1] = time.tv_usec;
 	SortAndPrint(args);
 }
 
@@ -57,7 +65,7 @@ void	printArgs(char **args)
 
 void 	PmergeMe::SortAndPrint(char **args) 
 {
-	struct timeval	start, end;
+/* 	struct timeval	start, end;
 
 	//Vector
 	gettimeofday(&start, NULL);
@@ -69,19 +77,15 @@ void 	PmergeMe::SortAndPrint(char **args)
 	sortDeque();
 	gettimeofday(&end, NULL);
 	long timerDeque = end.tv_usec - start.tv_usec;
-/* 	//List
-	gettimeofday(&start, NULL);
-	sortList();
-	gettimeofday(&end, NULL);
-	long timerList = end.tv_usec - start.tv_usec; */
-
+ */
 	std::cout << "Before: ";
 	printArgs(args);
 	std::cout << "After: ";
 	printContainer(vt);
-	std::cout << "time to process a range of "<< vt.size() << " elements with std::vector : " << timerVector << " us." << std::endl;
-	std::cout << "time to process a range of "<< dq.size() << " elements with std::deque : " <<  timerDeque << " us." << std::endl;
+	std::cout << "time to process a range of "<< vt.size() << " elements with std::vector : " << vtTime[1] - vtTime[0] << " us." << std::endl;
+	std::cout << "time to process a range of "<< dq.size() << " elements with std::deque : " <<  dqTime[1] - dqTime[0] << " us." << std::endl;
 //	std::cout << "time to process a range of "<< dq.size() << " elements with std::list : " <<  timerList << " us." << std::endl;
+
 }
 
 void	PmergeMe::setVector(char **arg)
@@ -106,13 +110,7 @@ void	PmergeMe::setDeque(char **arg)
 	}
 }
 
-/* void PmergeMe::setList(char **arg)
-{
-	for (int i = 1; arg[i] != NULL; i++)
-	{
-		ls.push_back(atoi(arg[i]));
-	}
-} */
+
 
 void PmergeMe::sortVector(void)
 {
@@ -122,8 +120,3 @@ void PmergeMe::sortDeque(void)
 {
 	fordJohnsonSort(dq.begin(), dq.end());
 }
-/* void PmergeMe::sortList(void)
-{
-	fordJohnsonSort(ls.begin(), ls.end());
-}
- */
