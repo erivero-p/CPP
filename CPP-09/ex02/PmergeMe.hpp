@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:41:26 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/23 15:46:34 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/05/23 16:11:02 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class PmergeMe {
 	public:
 		PmergeMe(int ac, char **args);
 		~PmergeMe(void);
-		int 	*parseInput(char **args, int ac);
+		void 	parseInput(char **args, int ac, int *input);
 		void	setVector(int *input);
 		void	sortVector(void);
 		void 	setNsortVector(int *input);

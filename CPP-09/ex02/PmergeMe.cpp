@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:30:21 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/23 15:47:04 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/05/23 16:11:41 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,9 @@ PmergeMe::~PmergeMe(void) {
 
 PmergeMe::PmergeMe(int ac, char **args) {
 
-	struct timeval	time;
-	int				*input;
+	int	*input = new int[ac - 1];
 	try {
-		input = parseInput(args, ac);
+		parseInput(args, ac, input);
 	}
 	catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
@@ -44,6 +43,7 @@ PmergeMe::PmergeMe(int ac, char **args) {
 	setNsortVector(input);
 	setNsortDeque(input);
 	printResult(args);
+	delete[] input;
 }
 
 void	PmergeMe::setNsortVector(int *input) {
@@ -70,10 +70,9 @@ void	PmergeMe::setNsortDeque(int *input) {
 	this->dqTime[1]	= time.tv_usec;
 }
 
-int *PmergeMe::parseInput(char **args, int ac) 
+void PmergeMe::parseInput(char **args, int ac, int *input) 
 {
 	char		*endptr;
-	int			input[ac - 1];
 	long int	aux;
 	if (ac < 2)
 		throw std::runtime_error("Error: no input");
@@ -84,7 +83,6 @@ int *PmergeMe::parseInput(char **args, int ac)
 			throw std::runtime_error("Error: wrong input");
 		input[i] = aux;
 	}
-	return (input);
 }
 
 void	printArgs(char **args) 
