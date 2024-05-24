@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:50:54 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/24 12:50:55 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/05/24 14:50:30 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ template <typename T>
 void printContainer(const T &container) 
 {
 	for (typename T::const_iterator it = container.begin(); it != container.end(); ++it) {
-		std::cout << *it << " ";
+		std::cout << *it << (it + 1 != container.end() ? " " : "");
 	}
 	std::cout << std::endl;
 }
