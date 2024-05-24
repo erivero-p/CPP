@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:30:21 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/24 14:42:38 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/05/24 14:48:30 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,18 +89,17 @@ void	printArgs(char **args)
 {
 	for (int i = 1; args[i] != NULL; i++)
 	{
-		std::cout << args[i] << (args[i + 1] ? " " : "");
+		std::cout << args[i] << (args[i + 1] ? " " : "\n");
 	}
-	std::cout << std::endl;
 }
 
-template <typename T>
-void printContainer(const T &container) 
+
+void printVector(std::vector<int> &vt) 
 {
-	for (typename T::const_iterator it = container.begin(); it != container.end(); ++it) {
-		std::cout << *it << " ";
+	for (std::vector<int>::const_iterator it = vt.begin(); it != vt.end(); ++it) 
+	{
+		std::cout << *it << ((it + 1 != vt.end()) ? " " : "\n");
 	}
-	std::cout << std::endl;
 }
 
 void 	PmergeMe::printResult(char **args) 
@@ -108,7 +107,7 @@ void 	PmergeMe::printResult(char **args)
 	std::cout << "Before: ";
 	printArgs(args);
 	std::cout << "After: ";
-	printContainer(vt);
+	printVector(vt);
 	std::cout << "time to process a range of "<< vt.size() << " elements with std::vector : " << vtTime[1] - vtTime[0] << " us." << std::endl;
 	std::cout << "time to process a range of "<< dq.size() << " elements with std::deque : " <<  dqTime[1] - dqTime[0] << " us." << std::endl;
 }
