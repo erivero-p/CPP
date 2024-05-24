@@ -6,12 +6,13 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:02 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/17 14:34:45 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/05/24 12:04:53 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+#include <stdlib.h>
 #include <stack>
 
 class	RPN {

@@ -6,16 +6,16 @@
 #    By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 13:16:08 by erivero-          #+#    #+#              #
-#    Updated: 2024/04/15 11:50:07 by erivero-         ###   ########.fr        #
+#    Updated: 2024/05/24 12:53:52 by erivero-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = btc
 
-CPP = c++
+CPP = clang++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -I /usr/bin/clang++
 
 SRC = main.cpp BitcoinExchange.cpp
 

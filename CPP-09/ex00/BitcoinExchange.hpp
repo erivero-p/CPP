@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:08:09 by erivero-          #+#    #+#             */
-/*   Updated: 2024/04/11 16:36:45 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/05/24 12:27:39 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include <ctime>
 #include <map>
 
 class BitcoinExchange {

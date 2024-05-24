@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:47:04 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/17 11:31:25 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/05/24 12:29:22 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ double	BitcoinExchange::parseLine(std::string line, int flag)
 
 void	BitcoinExchange::parseFile(std::string infile)
 {
-	std::ifstream file(infile);
+	std::ifstream file(infile.c_str());
 	std::string	line = "";
 	std::tm	date;
 	double	value;
