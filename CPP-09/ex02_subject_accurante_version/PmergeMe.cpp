@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:30:21 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/24 14:48:30 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/05/24 14:51:38 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ void	printArgs(char **args)
 		std::cout << args[i] << (args[i + 1] ? " " : "\n");
 	}
 }
-
 
 void printVector(std::vector<int> &vt) 
 {
