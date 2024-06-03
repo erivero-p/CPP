@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 16:26:16 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/17 14:55:27 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:25:11 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ float	RPN::polishCalculator(std::string input) {
 			i++;
 		if (isdigit(input[i]))
 			stk.push(atof(&input[i]));
-		else {
+		else if (input[i] == '+' || input[i] == '-' || input[i] == '*' || input[i] == '/') {
 			if (stk.size() < 2) //if we dont have already too numbers to operate, will mean that we have too many operators
 				throw std::runtime_error("Error: too many operators");
 			b = stk.top();
