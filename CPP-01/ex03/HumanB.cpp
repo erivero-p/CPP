@@ -6,22 +6,26 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 11:52:20 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/25 11:26:59 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:59:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string	nick) : name(nick) {}
-HumanB::~HumanB() {}
+HumanB::HumanB(std::string	nick) : name(nick) {
 
-void	HumanB::setWeapon(Weapon *wp)
-{
+}
+HumanB::~HumanB() {
+
+}
+
+void	HumanB::setWeapon(Weapon *wp) {
+
 	this->weapon = wp;
 }
 
-void	HumanB::attack()
-{
+void	HumanB::attack() {
+
 	if (!this->weapon)
 		std::cout << name << " has no weapon :c" << std::endl;
 	else

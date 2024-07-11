@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 12:07:39 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/25 15:08:28 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:01:59 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	parse(int ac, char **av)
 	std::cout << "\033[0";
 	return (1);
 }
-// Pasar por argumento infile y outfile directamente implica una operación de copia, lo cual
-// no está permitido para este tipo de archivos. Se soluciona pasándolos por referencia.
+// Passing infile and outfile directly as arguments implies a copy operation, which
+// is not allowed for this type of files. It is solved by passing them by reference.
 
 void	replacer(std::ifstream& infile, std::ofstream& outfile, std::string src, std::string	dst)
 {
@@ -46,11 +46,11 @@ void	replacer(std::ifstream& infile, std::ofstream& outfile, std::string src, st
 	while (std::getline(infile, line))
 	{
 		i = line.find(src);
-		while (i != std::string::npos) //npos es lo que devuelve find si no encuentra
+		while (i != std::string::npos) //npos is the return value if find does not find the string
 		{
 			line.erase(i, src.length());
 			line.insert(i, dst);
-			i = line.find(src); //por si hubiera más de una ocurrencia
+			i = line.find(src); // in case there's more than one ocurrence
 		}
 		outfile << line << std::endl;
 	}

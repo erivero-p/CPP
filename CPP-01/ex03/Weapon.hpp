@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 11:17:10 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/24 15:16:38 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:05:01 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 # include <iostream>
 class Weapon
 {
-	private:
-		std::string type;
-	public:
-		Weapon(std::string type);
-		~Weapon();
-		std::string &getType();
-		void setType(std::string type);
+private:
+	std::string type;
+public:
+	Weapon(std::string type);
+	~Weapon();
+	std::string &getType();
+	void setType(std::string type);
 };
 
 #endif

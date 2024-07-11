@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 14:51:03 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/07 14:54:42 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:36:37 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 int main()
 {
-
 	ClapTrap john("John");
 	ScavTrap claude("Claude");
 	FragTrap jane("Jane");
@@ -33,9 +32,6 @@ int main()
 	jane.beRepaired(24);
 	jane.displayStatus();
 	jane.highFivesGuys();
-/* 	holly.attack("Tiffany's");
-	holly.takeDamage(18);
-	holly.beRepaired(9); */
 	holly.displayStatus();
 	holly.whoAmI();
 }

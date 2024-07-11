@@ -6,21 +6,24 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:08:40 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/19 15:23:44 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:57:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::~PhoneBook(void){}
-PhoneBook::PhoneBook(void)
-{
+PhoneBook::~PhoneBook(void) {
+	
+}
+
+PhoneBook::PhoneBook(void) {
+
 	count = 0;
 	index = 0;
 }
 
-void	PhoneBook::pb_add(void)
-{
+void	PhoneBook::pb_add(void) {
+
 	int	i = 0;
 
 	if (index > 7)
@@ -38,12 +41,12 @@ void	PhoneBook::pb_add(void)
 	if (count < 8)
 		count++;
 }
-int	ft_get_index(int count)
-{
+
+int	ft_get_index(int count) {
+
 	std::string input;
 
 	std::getline(std::cin, input);
-//	std::cin >> input;
 	if (input.length() != 1)
 		return (-1);
 	if (!std::isdigit(input[0]))
@@ -58,11 +61,11 @@ int	ft_get_index(int count)
 		std::cout << "\033[0m";
 		return (-1);
 	}
-	return (index - 1); //para que el primero sea el 0 en el array
+	return (index - 1); // so first one is 0 in the array
 }
 
-void	PhoneBook::pb_search(void)
-{
+void	PhoneBook::pb_search(void) {
+
 	int index = -1;
 
 	if (count == 0)
@@ -84,8 +87,8 @@ void	PhoneBook::pb_search(void)
 		}
 	}
 }
-void	PhoneBook::pb_loop()
-{
+
+void	PhoneBook::pb_loop() {
 	std::string	input;
 
 	while (1)

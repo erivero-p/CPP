@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 13:43:13 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/30 13:58:50 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:08:37 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 int main( void ) 
 {
 	Fixed a;
-//	a.setRawBits(42);
-	Fixed b(a); //creación con el constructor de copia
-//	b.setRawBits(21);
+	Fixed b(a); // creation with the copy constructor
 	Fixed c;
-	c = b; //uso del operador de asignación 
+	c = b; // use of the assignment operator
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;
 	std::cout << c.getRawBits() << std::endl;

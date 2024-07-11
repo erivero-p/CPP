@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 13:43:13 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/31 11:33:09 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:11:46 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main( void )
 {
 	Fixed a;
 	Fixed const b(10);
-	Fixed const c(42.42f); //f para indicar que es float y no double
+	Fixed const c(42.42f); //f to indicate it's floatm not double
 	Fixed const d( b );
 	a = Fixed(1234.4321f);
 	std::cout << "a is " << a << std::endl;

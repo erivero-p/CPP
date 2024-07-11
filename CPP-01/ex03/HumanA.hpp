@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 11:32:20 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/24 15:16:55 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:04:48 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 class	HumanA
 {
-	private:
-		std::string	name;
-		Weapon	&weapon; //referencia a weapon porque el HumanA siempre debe tener un arma
-	public:
-		HumanA(std::string name, Weapon &wp);
-		~HumanA();
-		void	attack();
+private:
+	std::string	name;
+	Weapon	&weapon; // const ref to Weapon, cause the HUmanA always has a weapon
+public:
+	HumanA(std::string name, Weapon &wp);
+	~HumanA();
+	void	attack();
 };
