@@ -6,13 +6,13 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 12:19:56 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/16 16:33:21 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:12:47 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
 
-int main()
+int main(void)
 {
 	MutantStack<int> mstack;
 

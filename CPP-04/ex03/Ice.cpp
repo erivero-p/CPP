@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 11:20:04 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/01 15:40:14 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 09:55:45 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ void Ice::use(ICharacter& target) {
 }
 
 Ice*	Ice::clone(void) const {
-//llamamos al constructor de copia
+
 	return (new Ice(*this));
 }

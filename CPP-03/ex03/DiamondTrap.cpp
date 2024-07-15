@@ -6,13 +6,13 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 14:41:28 by erivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 17:35:57 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:04:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ScavTrap(), FragTrap() {
+DiamondTrap::DiamondTrap() : ScavTrap(), FragTrap(void) {
 
 	std::cout << "\033[1;0m" << "DiamondTrap Default Constructor Called"<< "\033[0m" <<std::endl;
 	this->hitPoints = FragTrap::hitPoints;
@@ -42,7 +42,7 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& src) {
 	return (*this);
 }
 
-DiamondTrap::~DiamondTrap() {
+DiamondTrap::~DiamondTrap(void) {
 
 	std::cout << "\033[1;0m" << "DiamondTrap Destructor Called"<< "\033[0m" <<std::endl;
 }
@@ -58,7 +58,7 @@ void	DiamondTrap::whoAmI(void) {
 	std::cout << ". Also known as ClapTrap  " << ClapTrap::name << "\033[0m" << std::endl;
 }
 
-void	DiamondTrap::displayStatus() {
+void	DiamondTrap::displayStatus(void) {
 
 	ClapTrap::displayStatus();
 }

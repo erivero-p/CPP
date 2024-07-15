@@ -6,18 +6,17 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 11:48:49 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/06 12:22:57 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:40:35 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 
-class	Animal
-{
-	protected:
-		std::string	type;
-	public:
+class	Animal {
+protected:
+	std::string	type;
+public:
 	Animal(void);
 	Animal(std::string type);
 	Animal(const Animal &cpy);

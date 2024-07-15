@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:59:21 by erivero-          #+#    #+#             */
-/*   Updated: 2024/04/05 12:41:58 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:04:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ MutantStack<T>::~MutantStack(void) {
 }
 
 template<typename T>
-typename MutantStack<T>::iterator MutantStack<T>::begin() {
+typename MutantStack<T>::iterator MutantStack<T>::begin(void) {
 
 	 return (this->c.begin());
 }
 
 template<typename T>
-typename MutantStack<T>::iterator MutantStack<T>::end() {
+typename MutantStack<T>::iterator MutantStack<T>::end(void) {
 
 	return (this->c.end());
 }

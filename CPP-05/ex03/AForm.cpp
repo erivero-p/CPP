@@ -17,7 +17,7 @@ AForm::AForm() : name("default"), target("defaultTarget"), toSign(150), toExec(1
 	this->sgnd = false;
 }
 
-AForm::AForm(const std::string nm, const std::string tg, const int ts, const int te) : name(nm), target(tg), toSign(ts), toExec(te){
+AForm::AForm(const std::string nm, const std::string tg, const int ts, const int te) : name(nm), target(tg), toSign(ts), toExec(te) {
 
 	this->sgnd = false;
 	try
@@ -45,7 +45,7 @@ AForm &AForm::operator=(const AForm &src) {
 	return (*this);
 }
 
-AForm::~AForm() {
+AForm::~AForm(void) {
 
 }
 

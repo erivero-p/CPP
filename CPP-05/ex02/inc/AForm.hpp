@@ -17,8 +17,7 @@
 
 class Bureaucrat;
 
-class AForm
-{
+class AForm {
 private:
 	const std::string	name;
 	const std::string	target;
@@ -26,20 +25,20 @@ private:
 	const int			toSign;
 	const int			toExec;
 public:
-	AForm();
+	AForm(void);
 	AForm(const std::string nm, const std::string tg, const int ts, const int te);
 	AForm(const AForm &src);
 	AForm &operator=(const AForm &src);
-	~AForm();
+	~AForm(void);
 
 	class GradeTooHighException : public std::exception {
-		const char *what() const throw();
+		const char *what(void) const throw();
 	};
 	class GradeTooLowException  : public std::exception {
-		const char *what() const throw();
+		const char *what(void) const throw();
 	};
 	class NotSignedException  : public std::exception {
-		const char *what() const throw();
+		const char *what(void) const throw();
 	};
 
 	const std::string	getName(void) const;

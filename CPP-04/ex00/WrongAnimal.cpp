@@ -22,7 +22,7 @@ WrongAnimal::WrongAnimal(std::string tp) : type(tp) {
 	std::cout << GRAY << "WrongAnimal Type Constructor called" << RNL;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &cpy){
+WrongAnimal::WrongAnimal(const WrongAnimal &cpy) {
 
 	*this = cpy;
 }
@@ -40,9 +40,11 @@ WrongAnimal::~WrongAnimal(void) {
 }
 
 void	WrongAnimal::makeSound(void) const {
+
 	std::cout << "\033[1;33m(?)" << std::endl << "\033[0m";
 }
 
 std::string	WrongAnimal::getType(void) const {
+
 	return(this->type);
 }

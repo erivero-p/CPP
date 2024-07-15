@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 12:38:46 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/16 16:31:11 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:06:37 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ public:
 	~MutantStack(void);
 
 	typedef typename std::stack<T>::container_type::iterator iterator;
-	iterator begin();
-	iterator end();
+	iterator begin(void);
+	iterator end(void);
 };
 
 #include "MutantStack.tpp"

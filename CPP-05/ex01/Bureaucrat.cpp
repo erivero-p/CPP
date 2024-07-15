@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:46:34 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/27 11:00:08 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:07:30 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Bureaucrat::Bureaucrat() : name("Default"), grade(150) {
 
 }
+
 Bureaucrat::Bureaucrat(const std::string nm, int gr) : name(nm) {
 
 	try {
@@ -47,7 +48,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src) {
 	return (*this);
 }
 
-Bureaucrat::~Bureaucrat() {
+Bureaucrat::~Bureaucrat(void) {
 
 }
 

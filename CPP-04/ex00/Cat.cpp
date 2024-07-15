@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 12:27:31 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/06 12:35:11 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:38:35 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,21 @@ Cat::Cat(void) {
 	std::cout << GRAY << "Cat Constructor called" << RNL;
 	this->type = "Cat";
 }
+
 Cat::Cat(const Cat &cpy) {
 
 	std::cout << GRAY << "Cat Copy Constructor called" << RNL;
 	*this = cpy;
 }
+
 Cat&	Cat::operator=(const Cat &src) {
 
 	if (this != &src)
 		this->type = src.type;
 	return (*this);
 }
-Cat::~Cat(void){
+
+Cat::~Cat(void) {
 
 	std::cout << RED << "Cat Destructor called" << RNL;
 }

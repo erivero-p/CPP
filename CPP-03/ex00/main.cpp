@@ -6,13 +6,13 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 14:51:03 by erivero-          #+#    #+#             */
-/*   Updated: 2024/02/02 15:22:09 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:04:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-int main() {
+int main(void) {
   	ClapTrap John("John Cena");
 	ClapTrap Kanye("Kanye");
 /* 	std::cout << "\033[0;31m";

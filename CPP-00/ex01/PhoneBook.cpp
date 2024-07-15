@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:08:40 by erivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 16:57:58 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:04:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	PhoneBook::pb_search(void) {
 	}
 }
 
-void	PhoneBook::pb_loop() {
+void	PhoneBook::pb_loop(void) {
 	std::string	input;
 
 	while (1)

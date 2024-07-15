@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:50:54 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/24 14:50:30 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:16:22 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include <algorithm>
 
 template <typename T>
-void printContainer(const T &container) 
-{
+void printContainer(const T &container) {
+
 	for (typename T::const_iterator it = container.begin(); it != container.end(); ++it) {
 		std::cout << *it << (it + 1 != container.end() ? " " : "");
 	}
@@ -25,8 +25,8 @@ void printContainer(const T &container)
 }
 
 template <typename Iterator>
-void insertionSort(Iterator left, Iterator right) 
-{ // left + 1 cause we asume the first one is already sorted
+void insertionSort(Iterator left, Iterator right) {
+ // left + 1 cause we asume the first one is already sorted
 	for (Iterator it = left + 1; it != right + 1; ++it) {
 		int key = *it; // even if its a template, we now the content will be an int
 		Iterator j = it;

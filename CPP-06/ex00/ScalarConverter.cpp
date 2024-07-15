@@ -6,13 +6,13 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:48:15 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/28 16:01:48 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:09:10 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-ScalarConverter::ScalarConverter(void){
+ScalarConverter::ScalarConverter(void) {
 	
 }
 
@@ -55,16 +55,16 @@ int	ft_filter(std::string str) {
 		return (ERROR);
 }
 
-void	print_cast_char(char c)
-{
+void	print_cast_char(char c) {
+
 	std::cout << "char: '" << c << "'" << std::endl;
 	std::cout << "int: " << static_cast<int>(c) << std::endl;
 	std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
 	std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
 }
 
-void	print_cast_int(long long int n)
-{
+void	print_cast_int(long long int n) {
+
 	char c = static_cast<char>(n);
 	if (isprint(c))
 		std::cout << "char: '" << c << "'" << std::endl;
@@ -84,8 +84,8 @@ void	print_cast_int(long long int n)
 		std::cout << "double: non displayable due to overflow" << std::endl;
 }
 
-void	print_cast_float(float f)
-{
+void	print_cast_float(float f) {
+
 	char c = static_cast<char>(f);
 	if (isprint(c))
 		std::cout << "char: '" << c << "'" << std::endl;
@@ -105,8 +105,8 @@ void	print_cast_float(float f)
 		std::cout << "double: non displayable due to overflow" << std::endl;
 }
 
-void	print_cast_double(double d)
-{
+void	print_cast_double(double d) {
+
 	char c = static_cast<char>(d);
 	if (isprint(c))
 		std::cout << "char: '" << c << "'" << std::endl;
@@ -125,8 +125,9 @@ void	print_cast_double(double d)
 	else
 		std::cout << "double: non displayable due to overflow" << std::endl;
 }
-void	print_cast_psel(std::string str, int flag)
-{
+
+void	print_cast_psel(std::string str, int flag) {
+
 	std::cout << "char: impossible to display" << std::endl;
 	std::cout << "int:  impossible to display" << std::endl;
 	std::cout << "float: " << str << (flag == 1 ? "f" : "") << std::endl;

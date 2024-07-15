@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:12:44 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/04 12:44:12 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 09:56:34 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void Character::equip(AMateria* m) {
 		std::cout << "Inventory is already full" << NL;
 		toFloor(m);	
 	}
-	else
+	else 
 	{
 		inventory[iSize] = m;
 		iSize++;
@@ -81,12 +81,12 @@ void Character::unequip(int idx) {
 
 	if (idx >= iSize)
 		std::cout << "Incorrect index" << NL;
-	else
+	else 	
 	{
 		toFloor(inventory[idx]);
-		if (idx < iSize)
+		if (idx < iSize) 
 		{
-			while (idx < iSize)
+			while (idx < iSize) 
 			{
 				inventory[idx] = inventory[idx + 1];
 				idx++;

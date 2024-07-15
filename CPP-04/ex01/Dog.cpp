@@ -6,13 +6,13 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 12:31:42 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/06 13:25:46 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:04:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(void) : Animal() {
+Dog::Dog(void) : Animal(void) {
 
 	std::cout << GRAY << "Dog Constructor called" << RNL;
 	this->type = "Dog";
@@ -35,7 +35,7 @@ Dog&	Dog::operator=(const Dog &src) {
 	return (*this);
 }
 
-Dog::~Dog(void){
+Dog::~Dog(void) {
 
 	std::cout << RED << "Dog Destructor called" << RNL;
 	delete tm;

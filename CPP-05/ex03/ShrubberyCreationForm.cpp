@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 15:57:26 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/27 11:00:22 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:07:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm &s
 	return (*this);
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm() {
+ShrubberyCreationForm::~ShrubberyCreationForm(void) {
 
 }
 
@@ -57,10 +57,3 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 	}
 }
 
-/* std::ostream& operator<<(std::ostream &oso, const ShrubberyCreationForm &fm) {
-
-	oso << "ShrubberyCreationForm: " << fm.getName() << ", required grade to be signed: " << fm.getSignGrade() \
-	<< ", required grade to be executed: " << fm.getExecGrade() << std::endl;
-	return (oso);
-}
- */

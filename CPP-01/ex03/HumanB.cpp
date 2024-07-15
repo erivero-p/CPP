@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 11:52:20 by erivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 16:59:58 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:04:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 HumanB::HumanB(std::string	nick) : name(nick) {
 
 }
-HumanB::~HumanB() {
+HumanB::~HumanB(void) {
 
 }
 
@@ -24,7 +24,7 @@ void	HumanB::setWeapon(Weapon *wp) {
 	this->weapon = wp;
 }
 
-void	HumanB::attack() {
+void	HumanB::attack(void) {
 
 	if (!this->weapon)
 		std::cout << name << " has no weapon :c" << std::endl;

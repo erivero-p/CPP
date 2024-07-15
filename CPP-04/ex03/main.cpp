@@ -6,17 +6,13 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:12:02 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/14 13:26:12 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 09:55:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/Interface.hpp"
 
 
-/* void ft_leak(void)
-{
-	system("leaks -q Interface");
-} */
 /* int main(void)
 {
 	Ice ice;
@@ -36,9 +32,8 @@
 	c1.displayInventory();
 } */
 
-int main()
+int main(void)
 {
-//	atexit(ft_leak);
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());

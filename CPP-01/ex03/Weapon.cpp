@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 11:18:43 by erivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 17:00:40 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:04:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 Weapon::Weapon(std::string tp) : type(tp) {
 
 }
-Weapon::~Weapon() {
+Weapon::~Weapon(void) {
 
 }
 
-std::string &Weapon::getType() {
+std::string &Weapon::getType(void) {
 
 	std::string &typ = this->type;
 	return (typ);

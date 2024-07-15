@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 12:32:49 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/06 14:11:30 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 09:52:07 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Dog.hpp"
 #include "WrongCat.hpp"
 
-int main()
+int main(void)
 {
 	int i = 4;
 

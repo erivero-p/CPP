@@ -6,28 +6,32 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:12:10 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/21 16:38:16 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:03:51 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/Intern.hpp"
 
-Intern::Intern() {
+Intern::Intern(void) {
 
 }
+
 Intern::Intern(const Intern &src) {
 
 	*this = src;
 }
+
 Intern &Intern::operator=(const Intern &src) {
 
 	if (this != &src)
 		*this = src;
 	return (*this);
 }
-Intern::~Intern() {
+
+Intern::~Intern(void) {
 
 }
+
 AForm *Intern::makeForm(std::string type, std::string target) {
 
 	std::string forms[3] = {"presidential pardon", "robotomy request", "shrubbery creation"};

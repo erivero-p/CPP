@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:04:24 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/16 16:16:53 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:12:15 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ int	main(void) {
 		std::cout << "Shortest span: " << A.shortestSpan() << std::endl;
 		A.addNumber(0); //this shouldn't enter
 	}
-	catch (std::exception &e)
-	{
+	catch (std::exception &e) {
 		std::cerr << "\033[0;31m" << e.what() << "\033[0m\n";
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 11:48:49 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/06 13:24:02 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:40:30 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 #include <iostream>
 #include "Brain.hpp"
 
-class	Animal
-{
-	protected:
-		std::string	type;
-	public:
+class	Animal {
+protected:
+	std::string	type;
+public:
 	Animal(void);
 	Animal(std::string type);
 	Animal(const Animal &cpy);

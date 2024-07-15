@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:41:41 by erivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 17:11:24 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:04:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ std::ostream& operator<<(std::ostream&oso, const Fixed& fx) {
 	return (oso);
 }
 
-Fixed::~Fixed() {
+Fixed::~Fixed(void) {
 
 	std::cout << "Destructor called" << std::endl;
 }

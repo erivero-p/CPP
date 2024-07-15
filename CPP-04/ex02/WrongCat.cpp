@@ -18,17 +18,20 @@ WrongCat::WrongCat(void) {
 	this->type = "WrongCat";
 	this->tm = new Brain();
 }
+
 WrongCat::WrongCat(const WrongCat &cpy) {
 
 	std::cout << GRAY << "WrongCat Copy Constructor called" << RNL;
 	*this = cpy;	
 }
+
 WrongCat&	WrongCat::operator=(const WrongCat &src) {
 
 	if (this != &src)
 		this->type = src.type;
 	return (*this);
 }
+
 WrongCat::~WrongCat(void){
 
 	std::cout << RED << "WrongCat Destructor called" << RNL;

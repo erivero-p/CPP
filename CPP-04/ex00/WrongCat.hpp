@@ -14,10 +14,10 @@
 #include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal {
-	public:
-		WrongCat(void);
-		WrongCat(const WrongCat &cpy);
-		WrongCat&	operator=(const WrongCat &src);
-		~WrongCat(void);
-		void	makeSound(void) const;
+public:
+	WrongCat(void);
+	WrongCat(const WrongCat &cpy);
+	WrongCat&	operator=(const WrongCat &src);
+	~WrongCat(void);
+	void	makeSound(void) const;
 };

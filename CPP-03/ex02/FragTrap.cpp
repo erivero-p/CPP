@@ -6,13 +6,13 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 12:18:12 by erivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 17:25:33 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:04:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void) : ClapTrap() {
+FragTrap::FragTrap(void) : ClapTrap(void) {
 
 	std::cout << "\033[1;34m" << "FragTrap Default Constructor Called"<< "\033[0m" <<std::endl;
 	this->hitPoints = 100;

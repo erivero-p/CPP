@@ -6,13 +6,13 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:38:19 by erivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 17:24:04 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:04:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap() {
+ScavTrap::ScavTrap() : ClapTrap(void) {
 
 	std::cout << "\033[1;36m" << "ScavTrap Default Constructor Called"<< "\033[0m" <<std::endl;
 	this->hitPoints = 100;
@@ -43,7 +43,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& src) {
 	return (*this);
 }
 
-ScavTrap::~ScavTrap() {
+ScavTrap::~ScavTrap(void) {
 
 	std::cout << "\033[1;36m" << "ScavTrap Destructor Called"<< "\033[0m" <<std::endl;
 }

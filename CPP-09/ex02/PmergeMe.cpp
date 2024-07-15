@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:30:21 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/23 16:11:41 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:17:02 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ void	PmergeMe::setNsortDeque(int *input) {
 	this->dqTime[1]	= time.tv_usec;
 }
 
-void PmergeMe::parseInput(char **args, int ac, int *input) 
-{
+void PmergeMe::parseInput(char **args, int ac, int *input) {
+
 	char		*endptr;
 	long int	aux;
 	if (ac < 2)
@@ -85,8 +85,8 @@ void PmergeMe::parseInput(char **args, int ac, int *input)
 	}
 }
 
-void	printArgs(char **args) 
-{
+void	printArgs(char **args) {
+
 	for (int i = 1; args[i] != NULL; i++)
 	{
 		std::cout << args[i] << (args[i + 1] ? " " : "");
@@ -94,8 +94,8 @@ void	printArgs(char **args)
 	std::cout << std::endl;
 }
 
-void 	PmergeMe::printResult(char **args) 
-{
+void 	PmergeMe::printResult(char **args) {
+
 	std::cout << "Before: ";
 	printArgs(args);
 	std::cout << "After: ";
@@ -104,14 +104,14 @@ void 	PmergeMe::printResult(char **args)
 	std::cout << "time to process a range of "<< dq.size() << " elements with std::deque : " <<  dqTime[1] - dqTime[0] << " us." << std::endl;
 }
 
-void	PmergeMe::setVector(int *input)
-{
+void	PmergeMe::setVector(int *input) {
+
 	for (int i = 0; input[i]; i++)
 		vt.push_back(input[i]);
 }
 
-void	PmergeMe::setDeque(int *input)
-{ 
+void	PmergeMe::setDeque(int *input) {
+ 
 	for (int i = 0; input[i]; i++)
 		dq.push_back(input[i]);
 }

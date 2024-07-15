@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 15:57:26 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/27 11:31:39 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:04:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm &s
 	return (*this);
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm() {
+ShrubberyCreationForm::~ShrubberyCreationForm(void) {
 
 }
 

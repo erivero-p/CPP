@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:01:18 by erivero-          #+#    #+#             */
-/*   Updated: 2024/04/02 13:21:35 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:11:41 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ Array<T>	&Array<T>::operator=(const Array<T> &src) {
 }
 
 template<typename T>
-Array<T>::~Array()
-{
+Array<T>::~Array() {
+
 	if (elements)
 		delete [] elements;
 }

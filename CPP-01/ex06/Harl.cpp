@@ -6,14 +6,14 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:36:58 by erivero-          #+#    #+#             */
-/*   Updated: 2024/01/30 12:04:52 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:04:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
 Harl::Harl(std::string nm) : name(nm) {}
-Harl::~Harl() {}
+Harl::~Harl(void) {}
 
 void	Harl::debug()
 {

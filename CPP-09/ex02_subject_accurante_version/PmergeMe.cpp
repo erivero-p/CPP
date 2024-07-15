@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:30:21 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/24 14:51:38 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:18:12 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ void	PmergeMe::setNsortDeque(int *input) {
 	this->dqTime[1]	= time.tv_usec;
 }
 
-void PmergeMe::parseInput(char **args, int ac, int *input) 
-{
+void PmergeMe::parseInput(char **args, int ac, int *input) {
+
 	char		*endptr;
 	long int	aux;
 	if (ac < 2)
@@ -85,24 +85,24 @@ void PmergeMe::parseInput(char **args, int ac, int *input)
 	}
 }
 
-void	printArgs(char **args) 
-{
+void	printArgs(char **args) {
+
 	for (int i = 1; args[i] != NULL; i++)
 	{
 		std::cout << args[i] << (args[i + 1] ? " " : "\n");
 	}
 }
 
-void printVector(std::vector<int> &vt) 
-{
+void printVector(std::vector<int> &vt) {
+
 	for (std::vector<int>::const_iterator it = vt.begin(); it != vt.end(); ++it) 
 	{
 		std::cout << *it << ((it + 1 != vt.end()) ? " " : "\n");
 	}
 }
 
-void 	PmergeMe::printResult(char **args) 
-{
+void 	PmergeMe::printResult(char **args) {
+
 	std::cout << "Before: ";
 	printArgs(args);
 	std::cout << "After: ";
@@ -111,20 +111,20 @@ void 	PmergeMe::printResult(char **args)
 	std::cout << "time to process a range of "<< dq.size() << " elements with std::deque : " <<  dqTime[1] - dqTime[0] << " us." << std::endl;
 }
 
-void	PmergeMe::setVector(int *input)
-{
+void	PmergeMe::setVector(int *input) {
+
 	for (int i = 0; input[i]; i++)
 		vt.push_back(input[i]);
 }
 
-void	PmergeMe::setDeque(int *input)
-{ 
+void	PmergeMe::setDeque(int *input) {
+ 
 	for (int i = 0; input[i]; i++)
 		dq.push_back(input[i]);
 }
 
-void insertionSortVector(std::vector<int>::iterator left, std::vector<int>::iterator right) 
-{
+void insertionSortVector(std::vector<int>::iterator left, std::vector<int>::iterator right) {
+
 	for (std::vector<int>::iterator it = left + 1; it != right + 1; ++it) {
 		int key = *it; // even if its a template, we now the content will be an int
 		std::vector<int>::iterator j = it;
@@ -136,8 +136,8 @@ void insertionSortVector(std::vector<int>::iterator left, std::vector<int>::iter
 	}
 }
 
-void mergeVector(std::vector<int>::iterator left, std::vector<int>::iterator mid, std::vector<int>::iterator right) 
-{
+void mergeVector(std::vector<int>::iterator left, std::vector<int>::iterator mid, std::vector<int>::iterator right) {
+
 	std::vector<int>::iterator i = left, j = mid; //temporal iterators to go through the two halves
 	std::vector<int> temp(right - left); // temporal vector to storage the sorted elements
 	std::vector<int>::size_type k = 0;
@@ -171,8 +171,8 @@ void mergeVector(std::vector<int>::iterator left, std::vector<int>::iterator mid
 	}
 }
 
-void fordJohnsonSortVector(std::vector<int>::iterator left, std::vector<int>::iterator right) 
-{
+void fordJohnsonSortVector(std::vector<int>::iterator left, std::vector<int>::iterator right) {
+
     if (std::distance(left, right) > 0) {
         std::vector<int>::iterator mid = left + std::distance(left, right) / 2;
         insertionSortVector(left, mid);
@@ -181,13 +181,13 @@ void fordJohnsonSortVector(std::vector<int>::iterator left, std::vector<int>::it
     }
 }
 
-void PmergeMe::sortVector(void)
-{
+void PmergeMe::sortVector(void) {
+
 	fordJohnsonSortVector(vt.begin(), vt.end());
 }
 
-void insertionSortDeque(std::deque<int>::iterator left, std::deque<int>::iterator right) 
-{
+void insertionSortDeque(std::deque<int>::iterator left, std::deque<int>::iterator right) {
+
 	for (std::deque<int>::iterator it = left + 1; it != right + 1; ++it) {
 		int key = *it; // even if its a template, we now the content will be an int
 		std::deque<int>::iterator j = it;
@@ -199,8 +199,8 @@ void insertionSortDeque(std::deque<int>::iterator left, std::deque<int>::iterato
 	}
 }
 
-void mergeDeque(std::deque<int>::iterator left, std::deque<int>::iterator mid, std::deque<int>::iterator right) 
-{
+void mergeDeque(std::deque<int>::iterator left, std::deque<int>::iterator mid, std::deque<int>::iterator right) {
+
 	std::deque<int>::iterator i = left, j = mid; //temporal iterators to go through the two halves
 	std::vector<int> temp(right - left); // temporal vector to storage the sorted elements
 	std::vector<int>::size_type k = 0;
@@ -234,8 +234,8 @@ void mergeDeque(std::deque<int>::iterator left, std::deque<int>::iterator mid, s
 	}
 }
 
-void	fordJohnsonSortDeque(std::deque<int>::iterator left, std::deque<int>::iterator right) 
-{
+void	fordJohnsonSortDeque(std::deque<int>::iterator left, std::deque<int>::iterator right) {
+
 	if (std::distance(left, right) > 0) {
 		std::deque<int>::iterator mid = left + std::distance(left, right) / 2;
 		insertionSortDeque(left, mid);
@@ -244,7 +244,7 @@ void	fordJohnsonSortDeque(std::deque<int>::iterator left, std::deque<int>::itera
 	}
 }
 
-void PmergeMe::sortDeque(void)
-{
+void PmergeMe::sortDeque(void) {
+
 	fordJohnsonSortDeque(dq.begin(), dq.end());
 }

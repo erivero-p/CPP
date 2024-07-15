@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 11:28:49 by erivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 17:25:20 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:06:37 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ protected:
 	int	energyPoints;
 	int	attackDamage;
 public:
-	ClapTrap();
+	ClapTrap(void);
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap &cpy);
 	ClapTrap& operator=(const ClapTrap &src);
-	~ClapTrap();
+	~ClapTrap(void);
 	void	attack(const std::string& target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);

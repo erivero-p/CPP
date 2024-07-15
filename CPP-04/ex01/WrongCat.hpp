@@ -14,12 +14,12 @@
 #include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal {
-	private:
-		Brain *tm;
-	public:
-		WrongCat(void);
-		WrongCat(const WrongCat &cpy);
-		WrongCat&	operator=(const WrongCat &src);
-		~WrongCat(void);
-		void	makeSound(void) const;
+private:
+	Brain *tm;
+public:
+	WrongCat(void);
+	WrongCat(const WrongCat &cpy);
+	WrongCat&	operator=(const WrongCat &src);
+	~WrongCat(void);
+	void	makeSound(void) const;
 };

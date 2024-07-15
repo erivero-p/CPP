@@ -6,16 +6,15 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 19:28:29 by ealgar-c          #+#    #+#             */
-/*   Updated: 2024/03/26 16:26:30 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:09:50 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "Base.hpp"
 
-class A: public Base
-{
-	public:
-		A();
-		~A();
+class A: public Base {
+public:
+	A(void);
+	~A(void);
 };

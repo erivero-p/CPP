@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:17:41 by erivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 17:24:24 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:06:37 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 class ScavTrap : public ClapTrap {
 public:
-	ScavTrap();
+	ScavTrap(void);
 	ScavTrap(std::string name);
 	ScavTrap(const ScavTrap& cpy);
 	ScavTrap& operator=(const ScavTrap& src);
-	~ScavTrap();
+	~ScavTrap(void);
 	void	guardGate(void);
 };

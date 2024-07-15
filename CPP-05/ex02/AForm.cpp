@@ -45,7 +45,7 @@ AForm &AForm::operator=(const AForm &src) {
 	return (*this);
 }
 
-AForm::~AForm() {
+AForm::~AForm(void) {
 
 }
 

@@ -6,12 +6,13 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 19:27:18 by ealgar-c          #+#    #+#             */
-/*   Updated: 2024/03/26 16:28:05 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:10:12 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/Base.hpp"
 
-Base::~Base() {
+Base::~Base(void) {
+
 	std::cout << "Base destructor called" << std::endl;
 }

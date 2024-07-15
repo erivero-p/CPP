@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:54:38 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/21 16:12:01 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:06:37 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-class Intern
-{
+class Intern {
 public:
-	Intern();
+	Intern(void);
 	Intern(const Intern &src);
 	Intern &operator=(const Intern &src);
-	~Intern();
+	~Intern(void);
 	AForm *makeForm(std::string type, std::string target);
 };
 

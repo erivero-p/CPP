@@ -6,13 +6,13 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 12:29:07 by erivero-          #+#    #+#             */
-/*   Updated: 2024/05/15 14:45:55 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:10:45 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "whatever.hpp"
 
-int main( void ) {
+int main(void) {
 	std::cout << "-		[test with ints]		-" << std::endl;
 	int a = 4;
 	int b = 2;

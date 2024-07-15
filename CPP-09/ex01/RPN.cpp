@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 16:26:16 by erivero-          #+#    #+#             */
-/*   Updated: 2024/06/03 17:25:11 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:16:00 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,12 @@ RPN &RPN::operator=(const RPN &src) {
 RPN::~RPN(void) {
 	
 }
+
 void RPN::inputChecker(std::string input) {
 	if (input.find_first_not_of("0123456789+-*/ ") != input.npos)
 		throw std::runtime_error("Error: wrong input");
 }
+
 float	RPN::operate(float a, float b, char op) {
 
 	switch (op)
@@ -61,7 +63,6 @@ float	RPN::operate(float a, float b, char op) {
 			throw std::runtime_error("Error: problem while operating");
 	}
 }
-
 
 float	RPN::polishCalculator(std::string input) {
 

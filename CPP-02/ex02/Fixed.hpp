@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:32:14 by erivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 17:21:42 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:06:37 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ private:
 	static const int fractional_bits = 8;
 public:
 //OCT
-	Fixed();
+	Fixed(void);
 	Fixed(const Fixed &f);
 	Fixed& operator=(const Fixed &f);
-	~Fixed();
+	~Fixed(void);
 // parametric constructors
 	Fixed(const int n);
 	Fixed(const float d);

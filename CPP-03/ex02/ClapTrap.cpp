@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 11:32:51 by erivero-          #+#    #+#             */
-/*   Updated: 2024/07/11 17:25:13 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:04:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ClapTrap::ClapTrap(std::string nm) : name(nm), hitPoints(10), energyPoints(10), 
 	std::cout << "\033[0;36m" << "Name Constructor called" << "\033[0m" << std::endl;
 }
 
-ClapTrap::~ClapTrap() {
+ClapTrap::~ClapTrap(void) {
 
 	std::cout << "\033[0;36m" << "Destructor called" << "\033[0m" << std::endl;
 }

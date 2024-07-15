@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 14:41:49 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/27 11:00:22 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:04:58 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm &src) {
 	return (*this);
 }
 
-RobotomyRequestForm::~RobotomyRequestForm() {
+RobotomyRequestForm::~RobotomyRequestForm(void) {
 
 }
 

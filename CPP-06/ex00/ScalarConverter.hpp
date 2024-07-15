@@ -6,7 +6,7 @@
 /*   By: erivero- <erivero-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:52 by erivero-          #+#    #+#             */
-/*   Updated: 2024/03/28 15:32:35 by erivero-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:08:48 by erivero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,13 @@
 #include <cmath>
 #include <iomanip>
 
-class ScalarConverter
-{
+class ScalarConverter {
 private:
-	ScalarConverter();
+	ScalarConverter(void);
 	ScalarConverter(const ScalarConverter &src);
 	ScalarConverter &operator=(const ScalarConverter &src);
 public:
-	~ScalarConverter();
+	~ScalarConverter(void);
 	static void	convert(const std::string);
 };
 
